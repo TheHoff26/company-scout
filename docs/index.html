@@ -211,7 +211,7 @@ fieldset{border:none;padding:0;margin:0}
           <option value="">Detect automatically</option>
           <option value="successfactors">SAP SuccessFactors</option><option value="workday">Workday</option>
           <option value="greenhouse">Greenhouse</option><option value="lever">Lever</option><option value="ashby">Ashby</option>
-          <option value="smartrecruiters">SmartRecruiters</option><option value="personio">Personio</option><option value="recruitee">Recruitee</option>
+          <option value="smartrecruiters">SmartRecruiters</option><option value="personio">Personio</option><option value="recruitee">Recruitee</option><option value="teamtailor">Teamtailor</option>
           <option value="linkedin">LinkedIn link only</option>
         </select></label>
         <label>Job system address or account<input name="ats_target" placeholder="filled in automatically"></label>
@@ -298,7 +298,7 @@ const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls)
 const store = { get(k){ try { return localStorage.getItem(k) || ""; } catch(e) { return ""; } },
                 set(k,v){ try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch(e) {} } };
 const ATS = {successfactors:"SAP SuccessFactors", workday:"Workday", greenhouse:"Greenhouse", lever:"Lever", ashby:"Ashby",
-  smartrecruiters:"SmartRecruiters", personio:"Personio", recruitee:"Recruitee", linkedin:"LinkedIn link only"};
+  smartrecruiters:"SmartRecruiters", personio:"Personio", recruitee:"Recruitee", teamtailor:"Teamtailor", linkedin:"LinkedIn link only"};
 const FILE = "docs/companies.json";
 
 let data = null, sha = null, key = null, privateCache = {}, editing = null;
