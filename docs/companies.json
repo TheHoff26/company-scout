@@ -1,0 +1,519 @@
+{
+  "schema": 3,
+  "updated": "2026-11-02",
+  "segments": [
+    {
+      "id": "utilities",
+      "name": "Nordic utilities",
+      "definition": "Power and heat producers, grid-connected generators and integrated energy companies in the Nordics.",
+      "typical_roles": "Strategy, origination, portfolio management, trading, business development"
+    },
+    {
+      "id": "energy_intensive",
+      "name": "Energy-intensive industries",
+      "definition": "Industrial companies whose energy and CO₂ costs are strategic: forest, refining, metals, chemicals, cement, data centres.",
+      "typical_roles": "Head of energy, energy sourcing & PPAs, decarbonisation programmes, electrification"
+    },
+    {
+      "id": "pe",
+      "name": "Private equity & infrastructure funds",
+      "definition": "Fund managers and investors in energy and infrastructure assets.",
+      "typical_roles": "Investment director, operating partner, value creation, origination"
+    },
+    {
+      "id": "portfolio",
+      "name": "Portfolio companies",
+      "definition": "Energy companies owned by PE or infrastructure funds, often in a growth or transformation phase.",
+      "typical_roles": "Managing director, commercial director, CEO of a project or platform company"
+    },
+    {
+      "id": "energy_services",
+      "name": "Energy service companies",
+      "definition": "Companies selling energy efficiency, flexibility, demand response, energy management or electrification services.",
+      "typical_roles": "Business unit lead, commercial director, product & market strategy"
+    },
+    {
+      "id": "developers",
+      "name": "Energy developers (PtX & renewables)",
+      "definition": "Developers of wind, solar, storage, hydrogen, e-fuels and carbon capture projects.",
+      "typical_roles": "Head of business development, commercial director, project portfolio lead"
+    },
+    {
+      "id": "trading",
+      "name": "Energy trading houses",
+      "definition": "Physical and financial traders and route-to-market providers for power, gas, CO₂ and commodities.",
+      "typical_roles": "Head of trading/origination, analytics, risk, AI-driven optimisation"
+    },
+    {
+      "id": "oem",
+      "name": "OEM & technology suppliers",
+      "definition": "Manufacturers of equipment and technology: engines, turbines, electrolysers, process technology, machinery.",
+      "typical_roles": "Business development for energy solutions, strategy, sales leadership, P&L of a business line"
+    },
+    {
+      "id": "others",
+      "name": "Others",
+      "definition": "Companies that don't fit the segments above, e.g. consultancies, agencies, associations.",
+      "typical_roles": "Varies"
+    }
+  ],
+  "crypto": null,
+  "companies": [
+    {
+      "id": "fortum",
+      "name": "Fortum",
+      "rating": "A",
+      "status": "watching",
+      "segment": "utilities",
+      "segments_secondary": [
+        "trading"
+      ],
+      "segment_detail": "Energy – power generation, trading & optimisation",
+      "country": "Finland",
+      "hq": "Espoo",
+      "ownership": "Listed (Nasdaq Helsinki)",
+      "description": "Nordic power producer with hydro and nuclear generation; strong in physical and financial power optimisation and trading, and in decarbonisation solutions for industrial customers.",
+      "fit": "Core match: Nordic power markets, trading/optimisation premium, industrial decarbonisation and electrification; Espoo-based.",
+      "financials": {
+        "year": 2025,
+        "currency": "EUR",
+        "revenue_m": 4989,
+        "operating_profit_m": 924,
+        "operating_profit_label": "comparable operating profit",
+        "net_profit_m": 765,
+        "employees": 4551,
+        "net_debt_m": 1479,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "market_cap": {
+          "value_bn": 22.97,
+          "currency": "USD",
+          "as_of": "2026-11",
+          "source": "https://companiesmarketcap.com/fortum/marketcap/"
+        },
+        "net_profit_label": "attributable to owners"
+      },
+      "careers_url": "https://www.fortum.com/careers",
+      "jobs": {
+        "ats": "successfactors",
+        "url": "https://jobs.fortum.com/Fortum",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://www.fortum.com/media/2026/02/fortum-january-december-2025-financial-statements-bulletin-2025-was-defined-strong-optimisation-premium-solid-achieved-power-price-and-low-generation-volumes"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    },
+    {
+      "id": "neste",
+      "name": "Neste",
+      "rating": "A",
+      "status": "watching",
+      "segment": "energy_intensive",
+      "segments_secondary": [
+        "developers"
+      ],
+      "segment_detail": "Energy – renewable fuels & refining",
+      "country": "Finland",
+      "hq": "Espoo",
+      "ownership": "Listed (Nasdaq Helsinki)",
+      "description": "World's largest producer of renewable diesel and sustainable aviation fuel, plus an oil refinery in Porvoo; active in renewable feedstock trading and Power-to-X.",
+      "fit": "Renewable fuels, PtX/e-fuels, global commodity and feedstock trading, international scope.",
+      "financials": {
+        "year": 2025,
+        "currency": "EUR",
+        "revenue_m": 19016,
+        "operating_profit_m": 1683,
+        "operating_profit_label": "comparable EBITDA",
+        "net_profit_m": 144,
+        "employees": 4850,
+        "net_debt_m": null,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "market_cap": {
+          "value_bn": 27.14,
+          "currency": "USD",
+          "as_of": "2026-10",
+          "source": "https://companiesmarketcap.com/neste/marketcap/"
+        },
+        "employees_source": "TradingView, Nov 2026"
+      },
+      "careers_url": "https://www.neste.com/careers",
+      "jobs": {
+        "ats": "successfactors",
+        "url": "https://jobs.neste.com",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://www.neste.com/news/nestes-financial-statements-release-2025",
+        "https://www.tradingview.com/symbols/SWB-NEF"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    },
+    {
+      "id": "st1",
+      "name": "St1",
+      "rating": "A",
+      "status": "watching",
+      "segment": "developers",
+      "segments_secondary": [
+        "energy_intensive"
+      ],
+      "segment_detail": "Energy – fuels, biofuels & renewables",
+      "country": "Finland",
+      "hq": "Helsinki",
+      "ownership": "Private (founder-led)",
+      "description": "Nordic energy company with a refinery in Gothenburg, a retail station network in Finland, Sweden and Norway, wind power, advanced biofuels and synthetic fuel projects.",
+      "fit": "Integrated energy transition player: renewables, biofuels, synthetic fuels; entrepreneurial, Helsinki-based.",
+      "financials": {
+        "year": 2025,
+        "currency": "EUR",
+        "revenue_m": 7200,
+        "operating_profit_m": null,
+        "operating_profit_label": "",
+        "net_profit_m": 99.2,
+        "employees": null,
+        "net_debt_m": null,
+        "equity_ratio_pct": 59.0,
+        "total_assets_m": null,
+        "market_cap": null,
+        "net_profit_label": "profit for the period"
+      },
+      "careers_url": "https://www.st1.com",
+      "jobs": {
+        "ats": "linkedin",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://st1.com/st1-nordic-oys-interim-report-january-june-2024"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    },
+    {
+      "id": "copenhagen-infrastructure-partners",
+      "name": "Copenhagen Infrastructure Partners",
+      "rating": "A",
+      "status": "watching",
+      "segment": "pe",
+      "segments_secondary": [
+        "developers"
+      ],
+      "segment_detail": "Infrastructure investment – renewables & Power-to-X",
+      "country": "Denmark",
+      "hq": "Copenhagen",
+      "ownership": "Private partnership (fund manager)",
+      "description": "Fund manager specialised in energy infrastructure: offshore and onshore wind, solar, storage, transmission, bioenergy and Power-to-X; about EUR 32 bn under management across eleven funds.",
+      "fit": "Renewables and PtX origination and business development, investment strategy, international; Copenhagen is a target location.",
+      "financials": {
+        "year": null,
+        "currency": "EUR",
+        "aum_bn": 32,
+        "employees": 500,
+        "employees_label": "500+",
+        "note": "Private fund manager: no public revenue or profit figures; AUM figure undated."
+      },
+      "careers_url": "https://www.cip.com/careers",
+      "jobs": {
+        "ats": "linkedin",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Copenhagen_Infrastructure_Partners"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    },
+    {
+      "id": "wartsila",
+      "name": "Wärtsilä",
+      "rating": "B",
+      "status": "watching",
+      "segment": "oem",
+      "segments_secondary": [
+        "energy_services"
+      ],
+      "segment_detail": "Energy & marine technology",
+      "country": "Finland",
+      "hq": "Helsinki",
+      "ownership": "Listed (Nasdaq Helsinki)",
+      "description": "Technology group for the marine and energy markets: engines, flexible power plants, energy storage and optimisation software, and lifecycle services.",
+      "fit": "Energy storage, flexible generation and decarbonisation solutions; P&L-led business units; strongly international.",
+      "financials": {
+        "year": 2025,
+        "currency": "EUR",
+        "revenue_m": 6914,
+        "operating_profit_m": 829,
+        "operating_profit_label": "comparable operating result",
+        "net_profit_m": null,
+        "employees": 17900,
+        "net_debt_m": -2006,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "market_cap": {
+          "value_bn": 16.98,
+          "currency": "USD",
+          "as_of": "2026-10",
+          "source": "https://companiesmarketcap.com/wartsila/marketcap/"
+        },
+        "net_debt_note": "negative = net cash"
+      },
+      "careers_url": "https://www.wartsila.com/careers",
+      "jobs": {
+        "ats": "successfactors",
+        "url": "https://careers.wartsila.com",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://www.wartsila.com/media/news/04-02-2026-wartsila-s-financial-statements-bulletin-january-december-2025-3713746"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    },
+    {
+      "id": "stora-enso",
+      "name": "Stora Enso",
+      "rating": "B",
+      "status": "watching",
+      "segment": "energy_intensive",
+      "segments_secondary": [],
+      "segment_detail": "Forest industry – renewable materials",
+      "country": "Finland / Sweden",
+      "hq": "Helsinki",
+      "ownership": "Listed (Nasdaq Helsinki, Stockholm)",
+      "description": "Renewable materials company: packaging materials, wood products, biomaterials and large forest holdings in Sweden.",
+      "fit": "Energy-intensive industry: energy sourcing, decarbonisation and biogenic CO₂ opportunities; Helsinki/Stockholm.",
+      "financials": {
+        "year": 2025,
+        "currency": "EUR",
+        "revenue_m": 9326,
+        "operating_profit_m": 528,
+        "operating_profit_label": "adjusted EBIT",
+        "net_profit_m": 686,
+        "employees": 18877,
+        "net_debt_m": null,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "market_cap": {
+          "value_bn": 8.8,
+          "currency": "USD",
+          "as_of": "2026-10",
+          "source": "https://companiesmarketcap.com/stora-enso/marketcap/"
+        },
+        "employees_label": "18,877 average FTE"
+      },
+      "careers_url": "https://www.storaenso.com/en/careers",
+      "jobs": {
+        "ats": "workday",
+        "url": "https://storaenso.wd502.myworkdayjobs.com/Stora_Enso_site_opportunities",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://news.cision.com/stora-enso-oyj/r/stora-enso-financial-statements-release-2025--sharpened-strategic-focus,c4302195"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    },
+    {
+      "id": "metsa-group",
+      "name": "Metsä Group",
+      "rating": "B",
+      "status": "watching",
+      "segment": "energy_intensive",
+      "segments_secondary": [],
+      "segment_detail": "Forest industry – pulp, board, wood & tissue",
+      "country": "Finland",
+      "hq": "Espoo",
+      "ownership": "Cooperative (≈90,000 forest owners); Metsä Board listed",
+      "description": "Forest industry group owned by Metsäliitto Cooperative: pulp, paperboard, wood products, tissue and wood supply.",
+      "fit": "Large energy user and producer of biogenic CO₂; energy and decarbonisation roles; Espoo-based.",
+      "financials": {
+        "year": 2025,
+        "currency": "EUR",
+        "revenue_m": 5833,
+        "operating_profit_m": -85,
+        "operating_profit_label": "comparable operating result",
+        "net_profit_m": -281.3,
+        "employees": 8767,
+        "net_debt_m": 1288.4,
+        "equity_ratio_pct": 56.8,
+        "total_assets_m": null,
+        "market_cap": null
+      },
+      "careers_url": "https://metsagroup.com/careers/work-with-us/open-jobs",
+      "jobs": {
+        "ats": "workday",
+        "url": "https://metsagroup.wd103.myworkdayjobs.com/en-US/MetsaGroup_Careers",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://www.metsagroup.com/news-and-publications/news/2026/metsa-groups-comparable-operating-result-injanuarydecember-2025-was-eur--85-million/"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    },
+    {
+      "id": "valmet",
+      "name": "Valmet",
+      "rating": "C",
+      "status": "watching",
+      "segment": "oem",
+      "segments_secondary": [],
+      "segment_detail": "Industrial technology – pulp, paper & energy",
+      "country": "Finland",
+      "hq": "Espoo",
+      "ownership": "Listed (Nasdaq Helsinki)",
+      "description": "Supplier of process technologies, automation and services for the pulp, paper and energy industries.",
+      "fit": "Energy and decarbonisation solutions for process industries; more technical, partial fit.",
+      "financials": {
+        "year": 2025,
+        "currency": "EUR",
+        "revenue_m": 5197,
+        "operating_profit_m": 620,
+        "operating_profit_label": "comparable EBITA",
+        "net_profit_m": 279,
+        "employees": 18500,
+        "net_debt_m": null,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "market_cap": {
+          "value_bn": 5.31,
+          "currency": "EUR",
+          "as_of": "2026-11-01",
+          "source": "https://de.tradingeconomics.com/valmt:fh:market-capitalization"
+        },
+        "employees_label": "≈18,500"
+      },
+      "careers_url": "https://valmet.com/careers",
+      "jobs": {
+        "ats": "workday",
+        "url": "https://valmet.wd103.myworkdayjobs.com/en-US/External",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://www.valmet.com/news/stock-exchange-releases/2026/valmets-financial-statements-review-january-1--december-31-2025-lead-the-way-strategy-delivered-first-results-comparable-ebita-margin-increased-to-11.9-percent-in-2025"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    },
+    {
+      "id": "metso",
+      "name": "Metso",
+      "rating": "C",
+      "status": "watching",
+      "segment": "oem",
+      "segments_secondary": [],
+      "segment_detail": "Industrial technology – mining & aggregates",
+      "country": "Finland",
+      "hq": "Espoo",
+      "ownership": "Listed (Nasdaq Helsinki)",
+      "description": "Equipment and services for the aggregates, minerals processing and metals refining industries.",
+      "fit": "Limited energy link; commercial and strategy roles possible.",
+      "financials": {
+        "year": 2025,
+        "currency": "EUR",
+        "revenue_m": 5240,
+        "operating_profit_m": 829,
+        "operating_profit_label": "adjusted EBITA",
+        "net_profit_m": null,
+        "employees": 17982,
+        "net_debt_m": null,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "market_cap": {
+          "value_bn": 14.03,
+          "currency": "EUR",
+          "as_of": "2026-11",
+          "source": "https://www.tradingview.com/symbols/OMXHEX-METSO/"
+        }
+      },
+      "careers_url": "https://www.metso.com/careers",
+      "jobs": {
+        "ats": "successfactors",
+        "url": "https://careers.metso.com",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://www.metso.com/corporate/media/news/2026/2/metsos-financial-statements-review-january-1--december-31-2025/"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    },
+    {
+      "id": "kone",
+      "name": "KONE",
+      "rating": "C",
+      "status": "watching",
+      "segment": "oem",
+      "segments_secondary": [],
+      "segment_detail": "Building technology – elevators & escalators",
+      "country": "Finland",
+      "hq": "Espoo",
+      "ownership": "Listed (Nasdaq Helsinki)",
+      "description": "Global leader in elevators, escalators and automatic doors, including maintenance and modernisation services.",
+      "fit": "Large international company; little link to energy or trading.",
+      "financials": {
+        "year": 2025,
+        "currency": "EUR",
+        "revenue_m": 11245.2,
+        "operating_profit_m": 1369.3,
+        "operating_profit_label": "adjusted EBIT",
+        "net_profit_m": 991.9,
+        "employees": 60000,
+        "net_debt_m": -699.8,
+        "equity_ratio_pct": 39.9,
+        "total_assets_m": null,
+        "market_cap": {
+          "value_bn": 32.19,
+          "currency": "USD",
+          "as_of": "2026-10",
+          "source": "https://companiesmarketcap.com/kone/marketcap/"
+        },
+        "employees_label": "60,000+",
+        "net_debt_note": "negative = net cash"
+      },
+      "careers_url": "https://www.kone.com/en/careers",
+      "jobs": {
+        "ats": "linkedin",
+        "detected": "2026-11-02, set manually",
+        "check": null
+      },
+      "linkedin_id": null,
+      "sources": [
+        "https://news.cision.com/kone-oyj/r/financial-statement-bulletin-of-kone-corporation-for-january-december-2025,c4303674"
+      ],
+      "added": "2026-11-02",
+      "updated": "2026-11-02",
+      "private": null
+    }
+  ]
+}

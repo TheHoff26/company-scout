@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Company Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F6F8; --surface:#FFFFFF; --ink:#16232E; --muted:#5A6A77; --line:#D3DCE2;
+  --pine:#23604F; --pine-soft:#DCEBE5; --ochre:#9A6A12; --ochre-soft:#F3E7CC;
+  --slate:#6D7C88; --slate-soft:#E4E9ED; --berry:#A3214A; --berry-soft:#F6DDE5; --focus:#2C6FB0;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F171D; --surface:#16212A; --ink:#E3EAEF; --muted:#94A3AF; --line:#2A3945;
+  --pine:#6CC3A6; --pine-soft:#173A31; --ochre:#E0B25A; --ochre-soft:#3A2E14;
+  --slate:#9AA8B3; --slate-soft:#22303B; --berry:#F07A9C; --berry-soft:#3E1726; --focus:#7DB4EA;}}
+:root[data-theme="dark"]{
+  --bg:#0F171D; --surface:#16212A; --ink:#E3EAEF; --muted:#94A3AF; --line:#2A3945;
+  --pine:#6CC3A6; --pine-soft:#173A31; --ochre:#E0B25A; --ochre-soft:#3A2E14;
+  --slate:#9AA8B3; --slate-soft:#22303B; --berry:#F07A9C; --berry-soft:#3E1726; --focus:#7DB4EA;}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "Schibsted Grotesk",system-ui,sans-serif}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:32px 16px 64px}
+header.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 32px;margin-bottom:24px}
+h1{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin:0}
+.lede{color:var(--muted);margin:6px 0 0;max-width:62ch}
+.tally{display:flex;gap:22px;align-items:flex-end}
+.tally div{font-size:14px;color:var(--muted)}
+.tally b{display:block;font-size:28px;line-height:1;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font:inherit;font-size:15px;font-weight:600;border-radius:8px;padding:8px 14px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.btn:hover{border-color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.btn.primary:hover{background:var(--pine);border-color:var(--pine)}
+.btn.danger{color:var(--berry);border-color:var(--berry-soft)}
+.btn.danger:hover{border-color:var(--berry)}
+.btn.small{font-size:14px;padding:5px 10px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.lock{display:inline-flex;align-items:center;gap:6px}
+.lock svg{width:15px;height:15px}
+.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;margin-bottom:16px}
+@media (max-width:860px){.filters{grid-template-columns:1fr 1fr}.filters .q{grid-column:1/-1}}
+.filters label{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%}
+textarea{min-height:84px;resize:vertical}
+.banner{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14px}
+.banner.err{border-color:var(--berry);color:var(--berry)}
+/* register table */
+.reg{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.reg th{text-align:left;font-size:13px;font-weight:600;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+.reg td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:15px}
+.reg tr:last-child td{border-bottom:none}
+.reg tbody tr{cursor:pointer}
+.reg tbody tr:hover{background:var(--bg)}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.co b{display:block;font-weight:700}
+.co span{display:block;font-size:13px;color:var(--muted)}
+.rating{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;font-weight:800;font-size:15px}
+.r-A{background:var(--pine-soft);color:var(--pine)} .r-B{background:var(--ochre-soft);color:var(--ochre)} .r-C{background:var(--slate-soft);color:var(--slate)}
+.pill{display:inline-block;font-size:13px;border-radius:999px;padding:2px 9px;background:var(--slate-soft);white-space:nowrap}
+.st-applied{background:var(--pine-soft);color:var(--pine)} .st-paused{background:var(--berry-soft);color:var(--berry)}
+.src{font-size:13px;color:var(--muted)} .src.bad{color:var(--berry)} .src.warn{color:var(--ochre)}
+.empty{padding:40px 12px;text-align:center;color:var(--muted)}
+@media (max-width:900px){
+  .reg thead{display:none}
+  .reg,.reg tbody,.reg tr,.reg td{display:block;width:100%}
+  .reg tr{display:grid;grid-template-columns:42px 1fr auto;gap:2px 10px;padding:12px;border-bottom:1px solid var(--line)}
+  .reg td{border:none;padding:0}
+  .reg td.c-rating{grid-row:1/span 3}
+  .reg td.c-co{grid-column:2}
+  .reg td.c-status{grid-column:3;grid-row:1}
+  .reg td.c-seg,.reg td.c-fig,.reg td.c-jobs{grid-column:2/-1;font-size:13px;color:var(--muted)}
+  .reg td.hide-m{display:none}
+}
+.co .fig-m{display:none}
+@media (max-width:900px){.co .fig-m{display:block}}
+footer{margin-top:28px;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+/* dialogs */
+dialog{width:min(860px,calc(100vw - 24px));max-height:calc(100vh - 24px);padding:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink)}
+dialog.narrow{width:min(520px,calc(100vw - 24px))}
+dialog::backdrop{background:rgba(10,20,28,.5)}
+.dlg{display:grid;gap:22px;padding:24px}
+@media (max-width:560px){.dlg{padding:18px 16px}}
+.dlg h2{margin:0;font-size:24px;font-weight:800;letter-spacing:-.01em}
+.dlg h3{margin:0 0 10px;font-size:16px;font-weight:700}
+.dlg p.hint{margin:4px 0 0;font-size:14px;color:var(--muted);max-width:64ch}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.grid label{display:grid;gap:4px;font-size:14px;font-weight:600;grid-column:span 3}
+.grid .s2{grid-column:span 2} .grid .s6{grid-column:1/-1} .grid .s4{grid-column:span 4} .grid .s1{grid-column:span 1}
+@media (max-width:640px){.grid label,.grid .s2,.grid .s4,.grid .s1{grid-column:1/-1}}
+fieldset{border:none;padding:0;margin:0}
+.checks{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+.checks label{display:flex;align-items:center;gap:6px;font-weight:500}
+.checks input{width:16px;height:16px;accent-color:var(--pine)}
+.private{border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:12px}
+.private.locked{background:var(--bg)}
+.contact{display:grid;grid-template-columns:1.2fr 1fr 1.3fr 1fr auto;gap:8px;align-items:end}
+@media (max-width:700px){.contact{grid-template-columns:1fr 1fr}.contact .btn{grid-column:1/-1}}
+.contact label{display:grid;gap:4px;font-size:13px;font-weight:600}
+.view dl{display:grid;grid-template-columns:180px 1fr;gap:6px 16px;margin:0;font-size:15px}
+@media (max-width:560px){.view dl{grid-template-columns:1fr}.view dt{margin-top:6px}}
+.view dt{color:var(--muted);font-size:14px}
+.view dd{margin:0}
+.dlg-foot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px}
+.dlg-foot .right{display:flex;gap:8px;margin-left:auto}
+.status{font-size:14px;min-height:1.4em}
+.status.err{color:var(--berry)} .status.ok{color:var(--pine)}
+.themebtn{background:none;border:none;color:var(--muted);font:inherit;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Company register</h1>
+      <p class="lede">Target companies for the job search. Companies that are not paused are searched for open positions every day.</p>
+    </div>
+    <div class="tally" aria-live="polite">
+      <div><b id="t-all">0</b>companies</div>
+      <div><b id="t-a">0</b>rated A</div>
+      <div><b id="t-applied">0</b>applied</div>
+    </div>
+  </header>
+
+  <div class="actions" style="margin-bottom:16px">
+    <button class="btn primary" id="btn-add" type="button">Add company</button>
+    <button class="btn lock" id="btn-unlock" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Unlock contacts</span></button>
+    <button class="btn" id="btn-access" type="button">GitHub access</button>
+  </div>
+
+  <div id="banner"></div>
+
+  <div class="filters" role="search">
+    <label class="q">Search<input type="search" id="f-q" placeholder="Company, segment, country, description…"></label>
+    <label>Segment<select id="f-seg"><option value="">All segments</option></select></label>
+    <label>Rating<select id="f-rating"><option value="">All</option><option>A</option><option>B</option><option>C</option></select></label>
+    <label>Status<select id="f-status"><option value="">All</option><option value="watching">Watching</option><option value="applied">Applied</option><option value="paused">Paused</option></select></label>
+    <label>Sort by<select id="f-sort"><option value="rating">Rating</option><option value="name">Name</option><option value="revenue">Revenue</option><option value="employees">Employees</option><option value="updated">Last updated</option></select></label>
+  </div>
+
+  <table class="reg" aria-label="Companies">
+    <thead><tr>
+      <th>Rating</th><th>Company</th><th>Segment</th><th>Country</th>
+      <th class="num">Revenue</th><th class="num">Op. profit</th><th class="num">Employees</th><th class="num">Market cap</th>
+      <th>Status</th><th>Job source</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <footer>
+    <span id="updated"></span>
+    <span><a href="companies.json">companies.json</a> · <button class="themebtn" id="theme" type="button">Switch theme</button></span>
+  </footer>
+</div>
+
+<!-- View / edit company -->
+<dialog id="dlg-co" aria-labelledby="co-h">
+  <form class="dlg" id="co-form" novalidate>
+    <div>
+      <h2 id="co-h">Company</h2>
+      <p class="hint" id="co-sub"></p>
+    </div>
+
+    <section>
+      <h3>General</h3>
+      <div class="grid">
+        <label class="s4">Company name<input name="name" required></label>
+        <label class="s1">Rating<select name="rating"><option>A</option><option>B</option><option>C</option></select></label>
+        <label class="s1">Status<select name="status"><option value="watching">Watching</option><option value="applied">Applied</option><option value="paused">Paused</option></select></label>
+        <label>Main segment<select name="segment"></select></label>
+        <label>Segment detail<input name="segment_detail" placeholder="e.g. Power generation, trading & optimisation"></label>
+        <fieldset class="s6"><span style="font-size:14px;font-weight:600">Secondary segments</span><div class="checks" id="co-sec"></div></fieldset>
+        <label class="s2">Country<input name="country"></label>
+        <label class="s2">Headquarters<input name="hq"></label>
+        <label class="s2">Ownership<input name="ownership" placeholder="Listed, private, cooperative…"></label>
+        <label class="s6">Description<textarea name="description"></textarea></label>
+        <label class="s6">Why it fits<textarea name="fit"></textarea></label>
+      </div>
+    </section>
+
+    <section>
+      <h3>Key figures</h3>
+      <div class="grid">
+        <label class="s1">Year<input name="f_year" inputmode="numeric"></label>
+        <label class="s1">Currency<input name="f_currency" value="EUR"></label>
+        <label class="s2">Revenue (m)<input name="f_revenue_m" inputmode="decimal"></label>
+        <label class="s2">Employees<input name="f_employees" inputmode="numeric"></label>
+        <label class="s2">Operating profit (m)<input name="f_operating_profit_m" inputmode="decimal"></label>
+        <label class="s2">Profit measure<input name="f_operating_profit_label" placeholder="e.g. comparable EBIT"></label>
+        <label class="s2">Net profit (m)<input name="f_net_profit_m" inputmode="decimal"></label>
+        <label class="s2">Net debt (m)<input name="f_net_debt_m" inputmode="decimal" placeholder="negative = net cash"></label>
+        <label class="s2">Equity ratio (%)<input name="f_equity_ratio_pct" inputmode="decimal"></label>
+        <label class="s2">Total assets (m)<input name="f_total_assets_m" inputmode="decimal"></label>
+        <label class="s2">Market cap (bn)<input name="m_value_bn" inputmode="decimal"></label>
+        <label class="s2">Market cap currency<input name="m_currency" placeholder="EUR"></label>
+        <label class="s2">Market cap as of<input name="m_as_of" placeholder="2026-11"></label>
+      </div>
+    </section>
+
+    <section>
+      <h3>Jobs</h3>
+      <div class="grid">
+        <label class="s6">Careers page<input name="careers_url" type="url" placeholder="https://…"></label>
+        <label>Job system<select name="ats">
+          <option value="">Detect automatically</option>
+          <option value="successfactors">SAP SuccessFactors</option><option value="workday">Workday</option>
+          <option value="greenhouse">Greenhouse</option><option value="lever">Lever</option><option value="ashby">Ashby</option>
+          <option value="smartrecruiters">SmartRecruiters</option><option value="personio">Personio</option><option value="recruitee">Recruitee</option>
+          <option value="linkedin">LinkedIn link only</option>
+        </select></label>
+        <label>Job system address or account<input name="ats_target" placeholder="filled in automatically"></label>
+        <label class="s2">LinkedIn company id<input name="linkedin_id" inputmode="numeric" placeholder="optional"></label>
+        <p class="hint s6" id="co-jobs-note" style="grid-column:1/-1;margin:0"></p>
+      </div>
+    </section>
+
+    <section class="private" id="co-private">
+      <div>
+        <h3 style="margin:0">Contacts and comment</h3>
+        <p class="hint" id="co-private-hint">Encrypted with your passphrase before saving. Only you can read them.</p>
+      </div>
+      <div id="co-contacts" style="display:grid;gap:10px"></div>
+      <div><button class="btn small" type="button" id="co-add-contact">Add contact</button></div>
+      <label style="display:grid;gap:4px;font-size:14px;font-weight:600">Comment<textarea name="comment" placeholder="Anything you want to remember about this company"></textarea></label>
+    </section>
+
+    <section>
+      <h3>Sources</h3>
+      <label style="display:grid;gap:4px;font-size:14px;font-weight:600">Links used for the figures, one per line<textarea name="sources"></textarea></label>
+      <div id="co-source-links" style="font-size:14px;margin-top:6px;display:grid;gap:2px"></div>
+    </section>
+
+    <div class="dlg-foot">
+      <button class="btn danger" type="button" id="co-delete">Delete company</button>
+      <div class="status" id="co-status" role="status" aria-live="polite"></div>
+      <div class="right">
+        <button class="btn" type="button" id="co-cancel">Cancel</button>
+        <button class="btn primary" type="submit" id="co-save">Save</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<!-- Passphrase -->
+<dialog id="dlg-pass" class="narrow" aria-labelledby="pass-h">
+  <form class="dlg" id="pass-form" novalidate>
+    <div>
+      <h2 id="pass-h">Unlock contacts</h2>
+      <p class="hint" id="pass-hint"></p>
+    </div>
+    <label style="display:grid;gap:4px;font-size:14px;font-weight:600">Passphrase<input type="password" id="pass-1" autocomplete="current-password"></label>
+    <label id="pass-2-wrap" style="display:grid;gap:4px;font-size:14px;font-weight:600" hidden>Repeat passphrase<input type="password" id="pass-2" autocomplete="new-password"></label>
+    <div class="dlg-foot">
+      <div class="status" id="pass-status" role="status" aria-live="polite"></div>
+      <div class="right">
+        <button class="btn" type="button" id="pass-cancel">Cancel</button>
+        <button class="btn primary" type="submit" id="pass-ok">Unlock</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<!-- GitHub access -->
+<dialog id="dlg-access" class="narrow" aria-labelledby="acc-h">
+  <form class="dlg" id="acc-form" novalidate>
+    <div>
+      <h2 id="acc-h">GitHub access</h2>
+      <p class="hint">Saving changes needs an access token for this repository. It stays in this browser only.</p>
+    </div>
+    <label style="display:grid;gap:4px;font-size:14px;font-weight:600">Repository<input id="acc-repo" placeholder="TheHoff26/company-scout"></label>
+    <label style="display:grid;gap:4px;font-size:14px;font-weight:600">Access token<input id="acc-token" type="password" placeholder="github_pat_…" autocomplete="off"></label>
+    <ol class="hint" style="margin:0;padding-left:20px;font-size:14px;color:var(--muted)">
+      <li>GitHub → your picture → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token.</li>
+      <li>Repository access: Only select repositories → company-scout.</li>
+      <li>Repository permissions → Contents: Read and write.</li>
+    </ol>
+    <div class="dlg-foot">
+      <div class="status" id="acc-status" role="status" aria-live="polite"></div>
+      <div class="right">
+        <button class="btn" type="button" id="acc-cancel">Cancel</button>
+        <button class="btn primary" type="submit">Save</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<script>
+(function(){
+"use strict";
+const $ = s => document.querySelector(s);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const store = { get(k){ try { return localStorage.getItem(k) || ""; } catch(e) { return ""; } },
+                set(k,v){ try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch(e) {} } };
+const ATS = {successfactors:"SAP SuccessFactors", workday:"Workday", greenhouse:"Greenhouse", lever:"Lever", ashby:"Ashby",
+  smartrecruiters:"SmartRecruiters", personio:"Personio", recruitee:"Recruitee", linkedin:"LinkedIn link only"};
+const FILE = "docs/companies.json";
+
+let data = null, sha = null, key = null, privateCache = {}, editing = null;
+
+/* ---------- theme ---------- */
+const root = document.documentElement;
+try { const t = localStorage.getItem("cs-theme"); if (t) root.dataset.theme = t; } catch(e) {}
+$("#theme").onclick = () => {
+  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = dark ? "light" : "dark"; store.set("cs-theme", root.dataset.theme);
+};
+
+/* ---------- GitHub ---------- */
+const guessRepo = () => {
+  const h = location.hostname.match(/^([\w-]+)\.github\.io$/);
+  const seg = location.pathname.split("/").filter(Boolean)[0];
+  return h ? h[1] + "/" + (seg || h[1] + ".github.io") : "";
+};
+const repo = () => store.get("cs-repo") || guessRepo();
+const token = () => store.get("cs-token");
+const b64decode = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, "")), c => c.charCodeAt(0)));
+const b64encode = s => { const b = new TextEncoder().encode(s); let bin = ""; b.forEach(x => bin += String.fromCharCode(x)); return btoa(bin); };
+const api = () => `https://api.github.com/repos/${repo()}/contents/${FILE}`;
+const ghHeaders = () => ({Authorization: "Bearer " + token(), Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"});
+function explain(r){
+  return r.status === 401 ? "GitHub did not accept the access token. Check it under GitHub access."
+    : r.status === 403 ? "The token may not change this repository. It needs Contents: Read and write."
+    : r.status === 404 ? "GitHub could not find the repository or docs/companies.json. Check the repository name under GitHub access."
+    : `GitHub returned an error (${r.status}). Try again in a minute.`;
+}
+async function ghRead(){
+  const r = await fetch(api() + "?ref=main&t=" + Date.now(), {headers: ghHeaders(), cache: "no-store"});
+  if (!r.ok) throw new Error(explain(r));
+  const f = await r.json();
+  return {data: JSON.parse(b64decode(f.content)), sha: f.sha};
+}
+// Read the newest file, apply `change`, write it back; retries if the file changed meanwhile.
+async function commit(change, message){
+  if (!repo() || !token()) throw new Error("Add your GitHub access first (button GitHub access).");
+  for (let i = 0; i < 3; i++){
+    const cur = await ghRead();
+    change(cur.data);
+    cur.data.updated = new Date().toISOString().slice(0, 10);
+    const body = JSON.stringify(cur.data, null, 2) + "\n";
+    const r = await fetch(api(), {method: "PUT", headers: ghHeaders(),
+      body: JSON.stringify({message, content: b64encode(body), sha: cur.sha, branch: "main"})});
+    if (r.status === 409 || r.status === 422){ await new Promise(res => setTimeout(res, 1200)); continue; }
+    if (!r.ok) throw new Error(explain(r));
+    data = cur.data; sha = (await r.json()).content.sha;
+    return;
+  }
+  throw new Error("The file was changed elsewhere at the same moment. Please save again.");
+}
+
+/* ---------- encryption (AES-GCM, key from passphrase via PBKDF2) ---------- */
+const enc = new TextEncoder(), dec = new TextDecoder();
+const toB64 = buf => btoa(String.fromCharCode(...new Uint8Array(buf)));
+const fromB64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function deriveKey(pass, saltB64, iterations){
+  const base = await crypto.subtle.importKey("raw", enc.encode(pass), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({name: "PBKDF2", hash: "SHA-256", salt: fromB64(saltB64), iterations},
+    base, {name: "AES-GCM", length: 256}, false, ["encrypt", "decrypt"]);
+}
+async function seal(k, obj){
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({name: "AES-GCM", iv}, k, enc.encode(JSON.stringify(obj)));
+  return {iv: toB64(iv), ct: toB64(ct)};
+}
+async function open_(k, box){
+  const pt = await crypto.subtle.decrypt({name: "AES-GCM", iv: fromB64(box.iv)}, k, fromB64(box.ct));
+  return JSON.parse(dec.decode(pt));
+}
+
+/* ---------- formatting ---------- */
+const segName = id => (data.segments.find(s => s.id === id) || {}).name || id || "–";
+const fmt = (v, d = 0) => v == null || v === "" || isNaN(v) ? "–" : Number(v).toLocaleString("en-GB", {maximumFractionDigits: d});
+function money(m, cur){ if (m == null || m === "") return "–"; const v = Number(m); const c = cur === "EUR" || !cur ? "€" : cur + " ";
+  const sign = v < 0 ? "−" : "", a = Math.abs(v);
+  return a >= 1000 ? `${sign}${c}${(a / 1000).toLocaleString("en-GB", {minimumFractionDigits: 1, maximumFractionDigits: 1})} bn` : `${sign}${c}${fmt(a)} m`; }
+function mcap(f){ const m = f && f.market_cap; if (!m || m.value_bn == null) return "–";
+  return (m.currency === "EUR" ? "€" : m.currency === "USD" ? "$" : (m.currency || "") + " ") + fmt(m.value_bn, 1) + " bn"; }
+function jobText(c){
+  const j = c.jobs || {};
+  if (!j.ats && j.detect_failed) return {t: "Not found – " + j.detect_failed.replace(/^\d{4}-\d{2}-\d{2},\s*/, ""), cls: "warn"};
+  if (!j.ats) return {t: "Detection pending", cls: "warn"};
+  let t = ATS[j.ats] || j.ats, cls = "";
+  if (j.check && j.check.ok === false){ t += " · check failed " + j.check.date; cls = "bad"; }
+  else if (/verify/.test(j.detected || "")){ t += " · please verify"; cls = "warn"; }
+  return {t, cls};
+}
+
+/* ---------- list ---------- */
+function render(){
+  const q = $("#f-q").value.trim().toLowerCase(), seg = $("#f-seg").value, rt = $("#f-rating").value, st = $("#f-status").value, sort = $("#f-sort").value;
+  let rows = data.companies.filter(c =>
+    (!seg || c.segment === seg || (c.segments_secondary || []).includes(seg)) && (!rt || c.rating === rt) && (!st || c.status === st) &&
+    (!q || [c.name, c.segment_detail, segName(c.segment), c.country, c.hq, c.description, c.fit].join(" ").toLowerCase().includes(q)));
+  const f = c => c.financials || {};
+  const by = {
+    rating: (a, b) => (a.rating || "Z").localeCompare(b.rating || "Z") || a.name.localeCompare(b.name),
+    name: (a, b) => a.name.localeCompare(b.name),
+    revenue: (a, b) => (f(b).revenue_m || -1) - (f(a).revenue_m || -1),
+    employees: (a, b) => (f(b).employees || -1) - (f(a).employees || -1),
+    updated: (a, b) => (b.updated || "").localeCompare(a.updated || ""),
+  };
+  rows.sort(by[sort]);
+  const tb = $("#rows"); tb.replaceChildren();
+  if (!rows.length){ const tr = el("tr"), td = el("td", "empty", data.companies.length ? "No companies match these filters." : "No companies yet. Use Add company to start the register."); td.colSpan = 10; tr.append(td); tb.append(tr); }
+  rows.forEach(c => {
+    const tr = el("tr"); tr.tabIndex = 0; tr.setAttribute("aria-label", "Open " + c.name);
+    const td = (cls, child) => { const d = el("td", cls); if (child instanceof Node) d.append(child); else d.textContent = child; tr.append(d); return d; };
+    td("c-rating", el("span", "rating r-" + (c.rating || "C"), c.rating || "–"));
+    const co = el("div", "co"); co.append(el("b", null, c.name), el("span", null, c.segment_detail || ""));
+    const fm = el("span", "fig-m", [money(f(c).revenue_m, f(c).currency) + " revenue", fmt(f(c).employees) + " employees", c.country].filter(x => !/^–/.test(x)).join(" · "));
+    co.append(fm); td("c-co", co);
+    td("c-seg hide-m", segName(c.segment));
+    td("hide-m", c.country || "–");
+    td("num hide-m", money(f(c).revenue_m, f(c).currency));
+    td("num hide-m", money(f(c).operating_profit_m, f(c).currency));
+    td("num hide-m", f(c).employees ? fmt(f(c).employees) : (f(c).employees_label || "–"));
+    td("num hide-m", f(c).aum_bn ? "AUM €" + fmt(f(c).aum_bn) + " bn" : mcap(f(c)));
+    td("c-status", el("span", "pill st-" + c.status, c.status ? c.status[0].toUpperCase() + c.status.slice(1) : "–"));
+    const jt = jobText(c); td("c-jobs", el("span", "src " + jt.cls, jt.t));
+    tr.onclick = () => openCompany(c.id);
+    tr.onkeydown = e => { if (e.key === "Enter") openCompany(c.id); };
+    tb.append(tr);
+  });
+  $("#t-all").textContent = data.companies.length;
+  $("#t-a").textContent = data.companies.filter(c => c.rating === "A").length;
+  $("#t-applied").textContent = data.companies.filter(c => c.status === "applied").length;
+  $("#updated").textContent = "Register updated " + (data.updated || "–");
+}
+["#f-q", "#f-seg", "#f-rating", "#f-status", "#f-sort"].forEach(s => $(s).addEventListener("input", render));
+
+function banner(msg, err){ const b = $("#banner"); b.replaceChildren(); if (msg){ const d = el("div", "banner" + (err ? " err" : ""), msg); b.append(d); } }
+
+/* ---------- company dialog ---------- */
+const form = $("#co-form"), F = n => form.elements[n];
+const setStatus = (id, msg, kind) => { const s = $(id); s.textContent = msg; s.className = "status" + (kind ? " " + kind : ""); };
+
+function contactRow(c = {}){
+  const row = el("div", "contact");
+  [["Name", "name", "text"], ["Role", "role", "text"], ["Email", "email", "email"], ["Phone", "phone", "tel"]].forEach(([lab, k, type]) => {
+    const l = el("label", null, lab), i = el("input"); i.type = type; i.dataset.k = k; i.value = c[k] || ""; i.disabled = !key; l.append(i); row.append(l);
+  });
+  const rm = el("button", "btn small", "Remove"); rm.type = "button"; rm.disabled = !key; rm.onclick = () => row.remove(); row.append(rm);
+  return row;
+}
+
+async function openCompany(id){
+  const c = id ? structuredClone(data.companies.find(x => x.id === id)) : {
+    id: null, name: "", rating: "B", status: "watching", segment: "others", segments_secondary: [], financials: {currency: "EUR"},
+    jobs: {}, sources: [], private: null};
+  editing = c;
+  $("#co-h").textContent = id ? c.name : "Add company";
+  $("#co-sub").textContent = id ? `Added ${c.added || "–"} · last updated ${c.updated || "–"}` : "Name and careers page are enough – the job source is detected automatically after saving.";
+  $("#co-delete").hidden = !id;
+  form.reset();
+  const segSel = F("segment"); segSel.replaceChildren(...data.segments.map(s => new Option(s.name, s.id)));
+  const sec = $("#co-sec"); sec.replaceChildren(...data.segments.map(s => {
+    const l = el("label"), i = el("input"); i.type = "checkbox"; i.value = s.id; i.checked = (c.segments_secondary || []).includes(s.id);
+    l.append(i, document.createTextNode(s.name)); return l; }));
+  ["name", "rating", "status", "segment", "segment_detail", "country", "hq", "ownership", "description", "fit", "careers_url"].forEach(k => F(k).value = c[k] || (k === "rating" ? "B" : k === "status" ? "watching" : ""));
+  F("linkedin_id").value = c.linkedin_id || "";
+  const f = c.financials || {};
+  ["year", "currency", "revenue_m", "employees", "operating_profit_m", "operating_profit_label", "net_profit_m", "net_debt_m", "equity_ratio_pct", "total_assets_m"]
+    .forEach(k => F("f_" + k).value = f[k] == null ? (k === "currency" ? "EUR" : "") : f[k]);
+  const m = f.market_cap || {}; F("m_value_bn").value = m.value_bn ?? ""; F("m_currency").value = m.currency || ""; F("m_as_of").value = m.as_of || "";
+  const j = c.jobs || {};
+  F("ats").value = j.ats || ""; F("ats_target").value = j.url || j.id || "";
+  $("#co-jobs-note").textContent = j.detected ? "Found " + j.detected + "." : j.detect_failed ? "Not found " + j.detect_failed + ". Add the careers page, or choose LinkedIn link only." : id ? "" : "Leave on Detect automatically unless you know the system.";
+  F("sources").value = (c.sources || []).join("\n");
+  const links = $("#co-source-links"); links.replaceChildren(...(c.sources || []).filter(u => /^https?:\/\//.test(u)).map(u => { const a = el("a", null, u.replace(/^https?:\/\/(www\.)?/, "").slice(0, 80)); a.href = u; a.target = "_blank"; a.rel = "noopener"; return a; }));
+  await fillPrivate(c);
+  setStatus("#co-status", "");
+  $("#dlg-co").showModal();
+}
+
+async function fillPrivate(c){
+  const box = $("#co-contacts"); box.replaceChildren();
+  const wrap = $("#co-private");
+  let p = {contacts: [], comment: ""};
+  if (key && c.private){
+    try { p = await open_(key, c.private); } catch(e) { p = {contacts: [], comment: ""}; setStatus("#co-status", "These contacts were saved with a different passphrase.", "err"); }
+  }
+  wrap.classList.toggle("locked", !key);
+  $("#co-private-hint").textContent = key ? "Encrypted with your passphrase before saving. Only you can read them."
+    : c.private ? "Locked. Use Unlock contacts to view and edit them." : "Unlock contacts to add names, emails, phone numbers and a comment.";
+  (p.contacts || []).forEach(x => box.append(contactRow(x)));
+  F("comment").value = p.comment || ""; F("comment").disabled = !key;
+  $("#co-add-contact").disabled = !key;
+}
+$("#co-add-contact").onclick = () => $("#co-contacts").append(contactRow());
+$("#co-cancel").onclick = () => $("#dlg-co").close();
+
+const num = v => { v = String(v).trim().replace(/\s/g, "").replace(",", "."); return v === "" || isNaN(v) ? null : Number(v); };
+const slug = s => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+async function collect(){
+  const c = editing, name = F("name").value.trim();
+  if (!name) throw new Error("Enter the company name.");
+  const url = F("careers_url").value.trim();
+  if (url && !/^https?:\/\/\S+\.\S+/.test(url)) throw new Error("The careers page must be a full web address starting with https://");
+  const out = {...c, name, rating: F("rating").value, status: F("status").value, segment: F("segment").value,
+    segments_secondary: [...$("#co-sec").querySelectorAll("input:checked")].map(i => i.value).filter(v => v !== F("segment").value),
+    segment_detail: F("segment_detail").value.trim(), country: F("country").value.trim(), hq: F("hq").value.trim(),
+    ownership: F("ownership").value.trim(), description: F("description").value.trim(), fit: F("fit").value.trim(),
+    careers_url: url, linkedin_id: F("linkedin_id").value.trim() || null,
+    sources: F("sources").value.split("\n").map(s => s.trim()).filter(Boolean),
+    updated: new Date().toISOString().slice(0, 10)};
+  const f = {...(c.financials || {})};
+  ["year", "revenue_m", "employees", "operating_profit_m", "net_profit_m", "net_debt_m", "equity_ratio_pct", "total_assets_m"].forEach(k => f[k] = num(F("f_" + k).value));
+  f.currency = F("f_currency").value.trim() || "EUR"; f.operating_profit_label = F("f_operating_profit_label").value.trim();
+  const mv = num(F("m_value_bn").value);
+  f.market_cap = mv == null ? null : {value_bn: mv, currency: F("m_currency").value.trim() || "EUR", as_of: F("m_as_of").value.trim(), source: (c.financials && c.financials.market_cap && c.financials.market_cap.source) || ""};
+  out.financials = f;
+  // job source: keep detection results unless the user changed the system or address
+  const ats = F("ats").value, target = F("ats_target").value.trim(), old = c.jobs || {};
+  const oldTarget = old.url || old.id || "";
+  if (ats !== (old.ats || "") || target !== oldTarget || (!ats && url !== (c.careers_url || ""))){
+    if (!ats) out.jobs = {ats: null};
+    else if (ats === "linkedin") out.jobs = {ats: "linkedin", detected: out.updated + ", set manually", check: null};
+    else {
+      if (!target) throw new Error("Enter the job system address or account, or choose Detect automatically.");
+      out.jobs = {ats, [/^https?:/.test(target) ? "url" : "id"]: target, detected: out.updated + ", set manually", check: null};
+    }
+  }
+  if (key){
+    const contacts = [...$("#co-contacts").querySelectorAll(".contact")].map(r => {
+      const o = {}; r.querySelectorAll("input").forEach(i => o[i.dataset.k] = i.value.trim()); return o; })
+      .filter(o => o.name || o.email || o.phone);
+    const comment = F("comment").value.trim();
+    out.private = contacts.length || comment ? await seal(key, {contacts, comment}) : null;
+  }
+  if (!c.id){
+    let id = slug(name) || "company", n = 2;
+    while (data.companies.some(x => x.id === id)) id = slug(name) + "-" + n++;
+    out.id = id; out.added = out.updated;
+  }
+  return out;
+}
+
+form.onsubmit = async e => {
+  e.preventDefault();
+  let co;
+  try { co = await collect(); } catch(err) { setStatus("#co-status", err.message, "err"); return; }
+  const isNew = !editing.id;
+  if (isNew && data.companies.some(x => x.name.toLowerCase() === co.name.toLowerCase())){ setStatus("#co-status", co.name + " is already in the register.", "err"); return; }
+  $("#co-save").disabled = true; setStatus("#co-status", "Saving…");
+  try {
+    await commit(d => {
+      const i = d.companies.findIndex(x => x.id === co.id);
+      if (i >= 0) d.companies[i] = co; else d.companies.push(co);
+    }, (isNew ? "Add " : "Update ") + co.name);
+    $("#dlg-co").close(); render();
+    banner(co.jobs && !co.jobs.ats ? `${co.name} saved. The job source is being detected and appears here in about 2 minutes (reload the page).` : `${co.name} saved.`);
+  } catch(err) { setStatus("#co-status", err.message, "err"); }
+  $("#co-save").disabled = false;
+};
+
+$("#co-delete").onclick = async () => {
+  const c = editing;
+  if ($("#co-delete").dataset.confirm !== c.id){ $("#co-delete").dataset.confirm = c.id; $("#co-delete").textContent = "Click again to delete"; return; }
+  $("#co-delete").dataset.confirm = ""; $("#co-delete").textContent = "Delete company";
+  setStatus("#co-status", "Deleting…");
+  try {
+    await commit(d => { d.companies = d.companies.filter(x => x.id !== c.id); }, "Delete " + c.name);
+    $("#dlg-co").close(); render(); banner(c.name + " deleted.");
+  } catch(err) { setStatus("#co-status", err.message, "err"); }
+};
+$("#dlg-co").addEventListener("close", () => { $("#co-delete").dataset.confirm = ""; $("#co-delete").textContent = "Delete company"; });
+
+$("#btn-add").onclick = () => openCompany(null);
+
+/* ---------- passphrase ---------- */
+function setLockButton(){ $("#btn-unlock span").textContent = key ? "Contacts unlocked" : "Unlock contacts"; }
+$("#btn-unlock").onclick = () => {
+  if (key){ key = null; setLockButton(); banner("Contacts locked."); return; }
+  const first = !data.crypto;
+  $("#pass-h").textContent = first ? "Set a passphrase" : "Unlock contacts";
+  $("#pass-hint").textContent = first
+    ? "Contacts and comments are encrypted with this passphrase before they are saved. Choose at least 10 characters. If you forget it, the contacts cannot be recovered."
+    : "Enter your passphrase to read and edit contacts and comments.";
+  $("#pass-2-wrap").hidden = !first; $("#pass-ok").textContent = first ? "Set passphrase" : "Unlock";
+  $("#pass-1").value = ""; $("#pass-2").value = ""; setStatus("#pass-status", "");
+  $("#dlg-pass").showModal(); $("#pass-1").focus();
+};
+$("#pass-cancel").onclick = () => $("#dlg-pass").close();
+$("#pass-form").onsubmit = async e => {
+  e.preventDefault();
+  const p = $("#pass-1").value;
+  try {
+    if (!data.crypto){
+      if (p.length < 10){ setStatus("#pass-status", "Use at least 10 characters.", "err"); return; }
+      if (p !== $("#pass-2").value){ setStatus("#pass-status", "The two passphrases differ.", "err"); return; }
+      setStatus("#pass-status", "Saving…");
+      const salt = toB64(crypto.getRandomValues(new Uint8Array(16))), iterations = 310000;
+      const k = await deriveKey(p, salt, iterations);
+      const block = {kdf: "PBKDF2-SHA256", iterations, salt, check: await seal(k, "company-scout")};
+      await commit(d => { if (d.crypto) throw new Error("A passphrase was set elsewhere meanwhile. Reload the page."); d.crypto = block; }, "Set passphrase for contacts");
+      key = k;
+    } else {
+      setStatus("#pass-status", "Checking…");
+      const k = await deriveKey(p, data.crypto.salt, data.crypto.iterations);
+      try { await open_(k, data.crypto.check); } catch(err) { setStatus("#pass-status", "Wrong passphrase.", "err"); return; }
+      key = k;
+    }
+    $("#dlg-pass").close(); setLockButton(); banner("Contacts unlocked for this visit. Open a company to see them.");
+  } catch(err) { setStatus("#pass-status", err.message, "err"); }
+};
+
+/* ---------- access ---------- */
+$("#btn-access").onclick = () => { $("#acc-repo").value = repo(); $("#acc-token").value = token(); setStatus("#acc-status", ""); $("#dlg-access").showModal(); };
+$("#acc-cancel").onclick = () => $("#dlg-access").close();
+$("#acc-form").onsubmit = async e => {
+  e.preventDefault();
+  const r = $("#acc-repo").value.trim().replace(/^https?:\/\/github\.com\//, "").replace(/\/$/, "");
+  if (!/^[\w.-]+\/[\w.-]+$/.test(r)){ setStatus("#acc-status", "Enter the repository as user/name.", "err"); return; }
+  store.set("cs-repo", r); store.set("cs-token", $("#acc-token").value.trim());
+  setStatus("#acc-status", "Checking…");
+  try { const cur = await ghRead(); data = cur.data; sha = cur.sha; render(); $("#dlg-access").close(); banner("GitHub access works. Changes are saved directly to the repository."); }
+  catch(err) { setStatus("#acc-status", err.message, "err"); }
+};
+
+/* ---------- start ---------- */
+async function load(){
+  try {
+    if (repo() && token()){ const cur = await ghRead(); data = cur.data; sha = cur.sha; }
+  } catch(e) { banner(e.message + " Showing the published copy instead.", true); }
+  if (!data){
+    const r = await fetch("companies.json?t=" + Date.now(), {cache: "no-store"});
+    data = await r.json();
+  }
+  const segSel = $("#f-seg");
+  data.segments.forEach(s => segSel.append(new Option(s.name, s.id)));
+  render();
+}
+load().catch(() => banner("The register could not be loaded. Reload the page.", true));
+})();
+</script>
+</body>
+</html>
