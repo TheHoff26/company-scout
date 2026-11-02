@@ -57,7 +57,15 @@
       "typical_roles": "Varies"
     }
   ],
-  "crypto": null,
+  "crypto": {
+    "kdf": "PBKDF2-SHA256",
+    "iterations": 310000,
+    "salt": "7K/5rnANZYDhCu4pPqaRLQ==",
+    "check": {
+      "iv": "tYKj6MdW8nCntS6O",
+      "ct": "Wwq4+r2g9rYUBRcLCeZShd8eA14+O/g37oO9mueI/w=="
+    }
+  },
   "companies": [
     {
       "id": "fortum",
@@ -188,7 +196,7 @@
         "net_profit_m": 99.2,
         "employees": null,
         "net_debt_m": null,
-        "equity_ratio_pct": 59.0,
+        "equity_ratio_pct": 59,
         "total_assets_m": null,
         "market_cap": null,
         "net_profit_label": "profit for the period"
