@@ -98,7 +98,10 @@
         "ats": "successfactors",
         "url": "https://jobs.fortum.com/Fortum",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": false
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -147,7 +150,10 @@
         "ats": "successfactors",
         "url": "https://jobs.neste.com",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -277,7 +283,10 @@
         "ats": "successfactors",
         "url": "https://careers.wartsila.com",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -324,7 +333,10 @@
         "ats": "workday",
         "url": "https://storaenso.wd502.myworkdayjobs.com/Stora_Enso_site_opportunities",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -365,7 +377,10 @@
         "ats": "workday",
         "url": "https://metsagroup.wd103.myworkdayjobs.com/en-US/MetsaGroup_Careers",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -412,7 +427,10 @@
         "ats": "workday",
         "url": "https://valmet.wd103.myworkdayjobs.com/en-US/External",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -458,7 +476,10 @@
         "ats": "successfactors",
         "url": "https://careers.metso.com",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
