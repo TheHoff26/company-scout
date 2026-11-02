@@ -112,7 +112,10 @@
         "ats": "successfactors",
         "url": "https://jobs.fortum.com",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -673,7 +676,10 @@
         "ats": "successfactors",
         "url": "https://jobs.rwe.com",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -1057,7 +1063,10 @@
         "ats": "successfactors",
         "url": "https://jobs.rwe.com",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [],
@@ -2700,7 +2709,10 @@
         "ats": "successfactors",
         "url": "https://careers.nordea.com",
         "detected": "2026-11-02, set manually",
-        "check": null
+        "check": {
+          "date": "2026-11-02",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
