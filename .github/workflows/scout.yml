@@ -1,0 +1,52 @@
+yaml
+name: Maintain job sources
+
+on:
+  push:
+    branches: [main]
+    paths: ["docs/companies.json"]   # after you add or edit a company
+  schedule:
+    - cron: "17 3 * * 1"             # Mondays: re-check every job source
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scout
+  cancel-in-progress: false
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Detect and check job sources
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            python -m scout.run
+          else
+            python -m scout.run --check
+          fi
+
+      - name: Save results
+        run: |
+          git config user.name "company-scout-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/companies.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Job sources updated $(date -u +%F)"
+            git pull --rebase origin main
+            git push
+          fi
