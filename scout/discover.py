@@ -36,7 +36,7 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
 log = logging.getLogger("jobfinder")
-TIMEOUT = 20
+TIMEOUT = (5, 12)          # (connect, read) seconds – fail fast on dead hosts
 RETRY_DAYS = 7
 
 # --------------------------------------------------------------------------- #
@@ -228,12 +228,14 @@ def detect(session, name: str, careers_url: str | None = None) -> dict:
             if _probe_successfactors(session, base):
                 return {"ats": "successfactors", "url": base, "how": "from careers page"}
 
-    for slug in slugs(name):
+    for n, slug in enumerate(slugs(name)):
         for ats in ("greenhouse", "lever", "ashby", "personio", "recruitee", "smartrecruiters"):
             if _probe_slug(session, ats, slug):
                 return {"ats": ats, "id": slug, "how": "name guess – please verify"}
+        if n > 0:                       # host guesses only for the main name form
+            continue
         for sub in ("jobs", "careers"):
-            for tld in ("com", "fi"):
+            for tld in ("com",):
                 base = f"https://{sub}.{slug}.{tld}"
                 if _probe_successfactors(session, base):
                     return {"ats": "successfactors", "url": base, "how": "name guess – please verify"}
