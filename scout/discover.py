@@ -54,7 +54,10 @@ PATTERNS: list[tuple[str, re.Pattern, str]] = [
         r"(?:jobs|careers)\.smartrecruiters\.com/([\w-]+)|api\.smartrecruiters\.com/v1/companies/([\w-]+)", re.I), "id"),
     ("personio", re.compile(r"https?://([\w-]+)\.jobs\.personio\.(?:de|com)", re.I), "id"),
     ("recruitee", re.compile(r"https?://([\w-]+)\.recruitee\.com", re.I), "id"),
+    ("teamtailor", re.compile(r"https?://([\w-]+)\.teamtailor\.com", re.I), "url"),
 ]
+_TT_RESERVED = {"www", "app", "api", "assets", "career", "support", "scripts", "status", "partners", "blog"}
+TT_MARKERS = re.compile(r"teamtailor-cdn|assets\.teamtailor|data-teamtailor|powered by teamtailor", re.I)
 _BAD_IDS = {"embed", "js", "jobs", "v1", "api", "www", "careers", "job", "search", "static", "assets"}
 SF_MARKERS = re.compile(r"rmkcdn\.successfactors|successfactors\.(?:com|eu)|/services/rss/job|"
                         r"career\?company=|jobs2web|sapsf", re.I)
@@ -71,6 +74,10 @@ def _match_systems(text: str) -> dict | None:
                 if site.lower() in ("wday", "en", "job"):
                     continue
                 return {"ats": "workday", "url": f"https://{tenant}.{shard}.myworkdayjobs.com/{site}"}
+            if ats == "teamtailor":
+                if m.group(1).lower() in _TT_RESERVED:
+                    continue
+                return {"ats": "teamtailor", "url": f"https://{m.group(1).lower()}.teamtailor.com"}
             ident = next(g for g in m.groups() if g)
             if ident.lower() in _BAD_IDS:
                 continue
@@ -143,7 +150,22 @@ def _probe_slug(session, ats: str, slug: str) -> bool:
     return False
 
 
+def _probe_teamtailor(session, base: str) -> bool:
+    """True if `base` serves a Teamtailor job RSS feed (<careers site>/jobs.rss)."""
+    try:
+        r = _get(session, f"{base.rstrip('/')}/jobs.rss", params={"per_page": 1},
+                 headers={"Accept": "application/rss+xml, application/xml, text/xml"})
+        if r.status_code != 200:
+            return False
+        root = ET.fromstring(r.content)
+        return root.tag == "rss" or root.find("channel") is not None
+    except Exception:
+        return False
+
+
 def _validate(session, found: dict) -> bool:
+    if found["ats"] == "teamtailor":
+        return _probe_teamtailor(session, found["url"])
     if found["ats"] == "workday":
         return _probe_workday(session, found["url"])
     if found["ats"] == "successfactors":
@@ -188,8 +210,10 @@ def _scan_page(session, url: str) -> tuple[dict | None, str, list[str], set[str]
         return None, "", [], set()
     text = r.text or ""
     found = _match_systems(final) or _match_systems(text)
+    host = urlparse(final)
+    if not found and TT_MARKERS.search(text):
+        found = {"ats": "teamtailor", "url": f"{host.scheme}://{host.netloc}"}
     if not found and SF_MARKERS.search(text):
-        host = urlparse(final)
         found = {"ats": "successfactors", "url": f"{host.scheme}://{host.netloc}"}
     links = []
     for href, label in re.findall(r"<a\b[^>]*href=[\"']([^\"'#]+)[\"'][^>]*>(.*?)</a>", text, re.I | re.S):
@@ -211,9 +235,12 @@ def detect(session, name: str, careers_url: str | None = None) -> dict:
         found, _, links, hosts = _scan_page(session, careers_url)
         if found and _validate(session, found):
             return {**found, "how": "from careers page"}
+        u = urlparse(careers_url)
+        root_url = f"{u.scheme}://{u.netloc}"
         if not found and _probe_successfactors(session, careers_url):
-            u = urlparse(careers_url)
-            return {"ats": "successfactors", "url": f"{u.scheme}://{u.netloc}", "how": "from careers page"}
+            return {"ats": "successfactors", "url": root_url, "how": "from careers page"}
+        if not found and _probe_teamtailor(session, root_url):
+            return {"ats": "teamtailor", "url": root_url, "how": "from careers page"}
 
         own = urlparse(careers_url).netloc.split(".")[-2] if "." in urlparse(careers_url).netloc else ""
         for link in links[:6]:
@@ -227,6 +254,8 @@ def detect(session, name: str, careers_url: str | None = None) -> dict:
             base = f"https://{host}"
             if _probe_successfactors(session, base):
                 return {"ats": "successfactors", "url": base, "how": "from careers page"}
+            if _probe_teamtailor(session, base):
+                return {"ats": "teamtailor", "url": base, "how": "from careers page"}
 
     for n, slug in enumerate(slugs(name)):
         for ats in ("greenhouse", "lever", "ashby", "personio", "recruitee", "smartrecruiters"):
