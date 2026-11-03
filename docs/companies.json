@@ -1017,7 +1017,9 @@
       },
       "careers_url": "https://www.helen.fi/en/about-us/join-us/open-positions",
       "jobs": {
-        "ats": null
+        "ats": null,
+        "detect_failed": "2026-11-03, no supported job system found",
+        "check": null
       },
       "linkedin_id": null,
       "sources": [],
