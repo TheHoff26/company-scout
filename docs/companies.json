@@ -1926,7 +1926,7 @@
       "id": "flexens",
       "name": "Flexens",
       "rating": "C",
-      "status": "watching",
+      "status": "paused",
       "segment": "developers",
       "segments_secondary": [],
       "segment_detail": "Power-to-X",
@@ -1959,7 +1959,7 @@
         "https://live.euronext.com/en/products/equities/company-news/2023-03-21-lhyfe-becomes-major-shareholder-finnish-project-developer"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-03",
       "private": null
     },
     {
