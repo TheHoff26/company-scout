@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "segments": [
     {
       "id": "utilities",
@@ -739,7 +739,8 @@
       "status": "watching",
       "segment": "trading",
       "segments_secondary": [
-        "utilities"
+        "utilities",
+        "developers"
       ],
       "segment_detail": "Gas, power trading & generation",
       "country": "Germany",
@@ -761,18 +762,16 @@
         "market_cap": null,
         "net_profit_label": "adjusted net income"
       },
-      "careers_url": "https://www.uniper.energy",
+      "careers_url": "https://careers.uniper.energy/en",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
-        "check": null
+        "ats": null
       },
       "linkedin_id": null,
       "sources": [
         "https://www.uniper.energy/news/uniper-achieves-financial-targets-for-fiscal-year-2025-and-proposes-dividend-payment-of-072-per-share"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-03",
       "private": null
     },
     {
@@ -1818,7 +1817,7 @@
         "revenue_m": 167.9,
         "operating_profit_m": 40.5,
         "operating_profit_label": "earnings before tax",
-        "net_profit_m": 41.0,
+        "net_profit_m": 41,
         "employees": 260,
         "net_debt_m": null,
         "equity_ratio_pct": null,
@@ -2362,7 +2361,7 @@
       "financials": {
         "year": 2025,
         "currency": "EUR",
-        "revenue_m": 352.0,
+        "revenue_m": 352,
         "operating_profit_m": 124.9,
         "operating_profit_label": "operating profit",
         "net_profit_m": null,
