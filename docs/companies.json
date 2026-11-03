@@ -1101,11 +1101,9 @@
         "total_assets_m": null,
         "market_cap": null
       },
-      "careers_url": "https://orsted.com",
+      "careers_url": "https://orsted.com/en/careers/",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
-        "check": null
+        "ats": null
       },
       "linkedin_id": null,
       "sources": [],
