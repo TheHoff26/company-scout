@@ -3091,7 +3091,13 @@
         "market_cap": null
       },
       "jobs": {
-        "ats": null
+        "ats": "teamtailor",
+        "url": "https://careers.ren-gas.com",
+        "detected": "2026-11-03, from careers page",
+        "check": {
+          "date": "2026-11-03",
+          "ok": true
+        }
       },
       "sources": [],
       "private": null,
