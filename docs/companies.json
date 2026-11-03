@@ -1015,16 +1015,14 @@
         "total_assets_m": null,
         "market_cap": null
       },
-      "careers_url": "https://www.helen.fi",
+      "careers_url": "https://www.helen.fi/en/about-us/join-us/open-positions",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
-        "check": null
+        "ats": null
       },
       "linkedin_id": null,
       "sources": [],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-03",
       "private": null
     },
     {
