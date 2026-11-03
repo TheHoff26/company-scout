@@ -2844,18 +2844,16 @@
         "total_assets_m": null,
         "market_cap": null
       },
-      "careers_url": "https://www.meag.com",
+      "careers_url": "https://careers.munichre.com/en/meag",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
-        "check": null
+        "ats": null
       },
       "linkedin_id": null,
       "sources": [
         "https://pulse2.com/meag-e20-billion-infrastructure-debt-expansion-planned-report/amp/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-03",
       "private": null
     },
     {
