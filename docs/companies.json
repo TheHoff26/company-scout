@@ -3067,6 +3067,44 @@
       "added": "2026-11-02",
       "updated": "2026-11-02",
       "private": null
+    },
+    {
+      "id": "ren-gas",
+      "name": "Ren-Gas",
+      "rating": "A",
+      "status": "watching",
+      "segment": "developers",
+      "segments_secondary": [
+        "portfolio"
+      ],
+      "financials": {
+        "currency": "EUR",
+        "year": null,
+        "revenue_m": null,
+        "employees": 40,
+        "operating_profit_m": null,
+        "net_profit_m": null,
+        "net_debt_m": null,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "operating_profit_label": "",
+        "market_cap": null
+      },
+      "jobs": {
+        "ats": null
+      },
+      "sources": [],
+      "private": null,
+      "segment_detail": "eFuel",
+      "country": "Finland",
+      "hq": "Tampere",
+      "ownership": "private",
+      "description": "Leading PtX developer in Finland",
+      "fit": "high subsidy support, targeting German offtake market",
+      "careers_url": "https://careers.ren-gas.com/",
+      "linkedin_id": null,
+      "updated": "2026-11-03",
+      "added": "2026-11-03"
     }
   ]
 }
