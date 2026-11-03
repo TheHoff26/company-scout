@@ -762,11 +762,9 @@
         "market_cap": null,
         "net_profit_label": "adjusted net income"
       },
-      "careers_url": "https://careers.uniper.energy/en",
+      "careers_url": "https://careers.uniper.energy/",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-03, no supported job system found",
-        "check": null
+        "ats": null
       },
       "linkedin_id": null,
       "sources": [
