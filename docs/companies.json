@@ -583,18 +583,16 @@
         "turnover_note": "gross turnover ≈€20 bn",
         "capacity_note": "16 GW contracted renewable & flexible capacity"
       },
-      "careers_url": "https://danskecommodities.com/life-at-dc",
+      "careers_url": "https://danskecommodities.com/join-us/vacancies",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
-        "check": null
+        "ats": null
       },
       "linkedin_id": null,
       "sources": [
         "https://finance.yahoo.com/sectors/energy/articles/danske-commodities-navigates-low-volatility-064133611.html"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-03",
       "private": null
     },
     {
