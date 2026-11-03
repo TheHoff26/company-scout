@@ -2846,7 +2846,9 @@
       },
       "careers_url": "https://careers.munichre.com/",
       "jobs": {
-        "ats": null
+        "ats": null,
+        "detect_failed": "2026-11-03, no supported job system found",
+        "check": null
       },
       "linkedin_id": null,
       "sources": [
