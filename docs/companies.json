@@ -735,8 +735,8 @@
     {
       "id": "uniper",
       "name": "Uniper",
-      "rating": "B",
-      "status": "watching",
+      "rating": "A",
+      "status": "applied",
       "segment": "trading",
       "segments_secondary": [
         "utilities",
@@ -746,7 +746,7 @@
       "country": "Germany",
       "hq": "Düsseldorf",
       "ownership": "Federal Republic of Germany (main shareholder)",
-      "description": "International energy company with generation, gas midstream and global commodity trading; majority state-owned since 2022.",
+      "description": "International energy company with generation, gas midstream and global commodity trading; majority state-owned since 2022.\n\nhttps://career5.successfactors.eu/career?company=UniperProd&",
       "fit": "Trading, origination and transformation roles; German-speaking environment.",
       "financials": {
         "year": 2025,
