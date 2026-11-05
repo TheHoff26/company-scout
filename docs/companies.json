@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "updated": "2026-11-03",
+  "updated": "2026-11-05",
   "segments": [
     {
       "id": "utilities",
@@ -3111,6 +3111,44 @@
       "linkedin_id": null,
       "updated": "2026-11-03",
       "added": "2026-11-03"
+    },
+    {
+      "id": "omv",
+      "name": "OMV",
+      "rating": "A",
+      "status": "watching",
+      "segment": "trading",
+      "segments_secondary": [
+        "portfolio"
+      ],
+      "financials": {
+        "currency": "EUR",
+        "year": null,
+        "revenue_m": null,
+        "employees": null,
+        "operating_profit_m": null,
+        "net_profit_m": null,
+        "net_debt_m": null,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "operating_profit_label": "",
+        "market_cap": null
+      },
+      "jobs": {
+        "ats": null
+      },
+      "sources": [],
+      "private": null,
+      "segment_detail": "",
+      "country": "Austria",
+      "hq": "Vienna",
+      "ownership": "Listed",
+      "description": "",
+      "fit": "",
+      "careers_url": "https://careers.omv.com/",
+      "linkedin_id": null,
+      "updated": "2026-11-05",
+      "added": "2026-11-05"
     }
   ]
 }
