@@ -3135,7 +3135,13 @@
         "market_cap": null
       },
       "jobs": {
-        "ats": null
+        "ats": "successfactors",
+        "url": "https://careers.omv.com",
+        "detected": "2026-11-05, from careers page",
+        "check": {
+          "date": "2026-11-05",
+          "ok": true
+        }
       },
       "sources": [],
       "private": null,
