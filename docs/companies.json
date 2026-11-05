@@ -3256,7 +3256,15 @@
         "operating_profit_label": "",
         "market_cap": null
       },
-      "jobs": {},
+      "jobs": {
+        "ats": "ashby",
+        "id": "skynrg",
+        "detected": "2026-11-05, name guess – please verify",
+        "check": {
+          "date": "2026-11-05",
+          "ok": true
+        }
+      },
       "sources": [],
       "private": null,
       "segment_detail": "",
