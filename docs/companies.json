@@ -3216,7 +3216,11 @@
         "operating_profit_label": "",
         "market_cap": null
       },
-      "jobs": {},
+      "jobs": {
+        "ats": null,
+        "detect_failed": "2026-11-05, no supported job system found – add the careers page URL",
+        "check": null
+      },
       "sources": [],
       "private": null,
       "segment_detail": "",
