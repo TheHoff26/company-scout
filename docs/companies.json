@@ -3193,6 +3193,42 @@
       "linkedin_id": null,
       "updated": "2026-11-05",
       "added": "2026-11-05"
+    },
+    {
+      "id": "hy24",
+      "name": "Hy24",
+      "rating": "A",
+      "status": "watching",
+      "segment": "portfolio",
+      "segments_secondary": [
+        "pe"
+      ],
+      "financials": {
+        "currency": "EUR",
+        "year": null,
+        "revenue_m": null,
+        "employees": null,
+        "operating_profit_m": null,
+        "net_profit_m": null,
+        "net_debt_m": null,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "operating_profit_label": "",
+        "market_cap": null
+      },
+      "jobs": {},
+      "sources": [],
+      "private": null,
+      "segment_detail": "",
+      "country": "",
+      "hq": "",
+      "ownership": "",
+      "description": "",
+      "fit": "",
+      "careers_url": "",
+      "linkedin_id": null,
+      "updated": "2026-11-05",
+      "added": "2026-11-05"
     }
   ]
 }
