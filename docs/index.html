@@ -112,10 +112,18 @@ fieldset{border:none;padding:0;margin:0}
 .status{font-size:14px;min-height:1.4em}
 .status.err{color:var(--berry)} .status.ok{color:var(--pine)}
 .themebtn{background:none;border:none;color:var(--muted);font:inherit;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0}
+.sitenav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;margin:-8px 0 28px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sitenav .brand{font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sitenav ul{display:flex;gap:4px;list-style:none;margin:0;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.sitenav a{display:block;text-decoration:none;font-weight:600;font-size:15px;padding:7px 14px;border-radius:8px;color:var(--muted);white-space:nowrap}
+.sitenav a:hover{color:var(--ink);background:var(--bg)}
+.sitenav a[aria-current="page"]{background:var(--ink);color:var(--surface)}
+@media (max-width:560px){.sitenav ul{width:100%}.sitenav li{flex:1}.sitenav a{text-align:center;padding:7px 6px;font-size:14px}}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <nav class="sitenav" aria-label="Job search tools"><span class="brand">Job search</span><ul><li><a href="/job-shortlist/">Job shortlist</a></li><li><a href="/job-shortlist/profile.html">Search profile</a></li><li><a href="/company-scout/" aria-current="page">Company register</a></li></ul></nav>
   <header class="top">
     <div>
       <h1>Company register</h1>
@@ -382,8 +390,16 @@ function mcap(f){ const m = f && f.market_cap; if (!m || m.value_bn == null) ret
   return (m.currency === "EUR" ? "€" : m.currency === "USD" ? "$" : (m.currency || "") + " ") + fmt(m.value_bn, 1) + " bn"; }
 function jobText(c){
   const j = c.jobs || {};
-  if (!j.ats && j.detect_failed) return {t: "Not found – " + j.detect_failed.replace(/^\d{4}-\d{2}-\d{2},\s*/, ""), cls: "warn"};
-  if (!j.ats) return {t: "Detection pending", cls: "warn"};
+  if (c.status === "paused") return {t: "Paused – not searched", cls: ""};
+  if (!j.ats && j.detect_failed){
+    const d = new Date(j.detect_failed.slice(0, 10)); d.setDate(d.getDate() + 7);
+    return {t: "LinkedIn link only · no job system found, next try " + d.toLocaleDateString("en-GB", {day: "numeric", month: "short"}), cls: "warn"};
+  }
+  if (!j.ats) return {t: "LinkedIn link only · job system being checked", cls: "warn"};
+  if (j.ats === "linkedin"){
+    const why = (j.detected || "").split("– ")[1] || "";
+    return {t: "LinkedIn link only" + (why ? " · " + why : ""), cls: ""};
+  }
   let t = ATS[j.ats] || j.ats, cls = "";
   if (j.check && j.check.ok === false){ t += " · check failed " + j.check.date; cls = "bad"; }
   else if (/verify/.test(j.detected || "")){ t += " · please verify"; cls = "warn"; }
