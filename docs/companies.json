@@ -3301,9 +3301,7 @@
         "market_cap": null
       },
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-06, no supported job system found",
-        "check": null
+        "ats": null
       },
       "sources": [],
       "private": null,
