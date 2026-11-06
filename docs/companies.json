@@ -1586,7 +1586,7 @@
       "id": "terralayr",
       "name": "terralayr",
       "rating": "B",
-      "status": "watching",
+      "status": "paused",
       "segment": "developers",
       "segments_secondary": [
         "trading"
@@ -1625,7 +1625,7 @@
         "https://en.newsroom.eurazeo.com/news/eurazeo-invests-in-terralayr-germany-s-innovative-integrated-energy-flexibility-provider-eedcf-52e2c.html"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-06",
       "private": null
     },
     {
