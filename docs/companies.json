@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "segments": [
     {
       "id": "utilities",
@@ -3277,6 +3277,44 @@
       "linkedin_id": null,
       "updated": "2026-11-05",
       "added": "2026-11-05"
+    },
+    {
+      "id": "siemens-energy",
+      "name": "Siemens Energy",
+      "rating": "A",
+      "status": "watching",
+      "segment": "oem",
+      "segments_secondary": [
+        "others"
+      ],
+      "financials": {
+        "currency": "EUR",
+        "year": null,
+        "revenue_m": null,
+        "employees": null,
+        "operating_profit_m": null,
+        "net_profit_m": null,
+        "net_debt_m": null,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "operating_profit_label": "",
+        "market_cap": null
+      },
+      "jobs": {
+        "ats": null
+      },
+      "sources": [],
+      "private": null,
+      "segment_detail": "",
+      "country": "Germany",
+      "hq": "Erlangen",
+      "ownership": "listed",
+      "description": "",
+      "fit": "",
+      "careers_url": "https://jobs.siemens-energy.com/",
+      "linkedin_id": null,
+      "updated": "2026-11-06",
+      "added": "2026-11-06"
     }
   ]
 }
