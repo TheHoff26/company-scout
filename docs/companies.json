@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "updated": "2026-11-06",
+  "updated": "2026-11-09",
   "segments": [
     {
       "id": "utilities",
@@ -1502,7 +1502,7 @@
     {
       "id": "cloudberry-clean-energy",
       "name": "Cloudberry Clean Energy",
-      "rating": "A",
+      "rating": "B",
       "status": "watching",
       "segment": "developers",
       "segments_secondary": [
@@ -1538,7 +1538,7 @@
         "https://www.roschier.com/newsroom/cloudberry-acquires-a-758-gwh-nordic-wind-platform"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-09",
       "private": null
     },
     {
