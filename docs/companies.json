@@ -1199,7 +1199,7 @@
     {
       "id": "e-on",
       "name": "E.ON",
-      "rating": "C",
+      "rating": "B",
       "status": "watching",
       "segment": "utilities",
       "segments_secondary": [
@@ -1233,7 +1233,7 @@
       "linkedin_id": null,
       "sources": [],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-09",
       "private": null
     },
     {
