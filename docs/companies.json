@@ -113,7 +113,7 @@
         "url": "https://jobs.fortum.com",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -168,7 +168,7 @@
         "url": "https://jobs.neste.com",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -301,7 +301,7 @@
         "url": "https://careers.wartsila.com",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -351,7 +351,7 @@
         "url": "https://storaenso.wd502.myworkdayjobs.com/Stora_Enso_site_opportunities",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -395,7 +395,7 @@
         "url": "https://metsagroup.wd103.myworkdayjobs.com/en-US/MetsaGroup_Careers",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -445,7 +445,7 @@
         "url": "https://valmet.wd103.myworkdayjobs.com/en-US/External",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -494,7 +494,7 @@
         "url": "https://careers.metso.com",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -631,7 +631,7 @@
         "url": "https://centrica.wd3.myworkdayjobs.com/Centrica",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -677,7 +677,7 @@
         "url": "https://jobs.rwe.com",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -720,7 +720,7 @@
       "careers_url": "https://www.energidanmark.dk",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -808,7 +808,7 @@
       "careers_url": "https://www.trianel.com",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -850,7 +850,7 @@
       "careers_url": "https://www.next-kraftwerke.com",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -892,7 +892,7 @@
       "careers_url": "https://www.nordpoolgroup.com",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -977,7 +977,10 @@
         "ats": "smartrecruiters",
         "id": "Statkraft1",
         "detected": "2026-11-02, set manually (research)",
-        "check": null
+        "check": {
+          "date": "2026-11-09",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -1062,7 +1065,7 @@
         "url": "https://jobs.rwe.com",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1144,7 +1147,7 @@
       "careers_url": "https://www.hafslund.no",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -1264,7 +1267,7 @@
       "careers_url": "https://www.mvv.de",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -1307,7 +1310,7 @@
         "url": "https://careers.ingridcapacity.com",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1393,7 +1396,7 @@
         "url": "https://careers.alight-energy.com",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1438,7 +1441,7 @@
         "url": "https://europeanenergy.wd103.myworkdayjobs.com/European_Energy",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1484,7 +1487,7 @@
         "url": "https://jobs.ox2.com",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1570,7 +1573,7 @@
         "id": "kyon-energy-gmbh",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1616,7 +1619,7 @@
         "id": "terralayr",
         "detected": "2026-11-02, name guess – please verify",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1660,7 +1663,7 @@
         "url": "https://ecostor.teamtailor.com",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1706,7 +1709,7 @@
         "url": "https://capaloai.teamtailor.com",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1788,7 +1791,7 @@
         "url": "https://careers.eolus.com",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -1829,7 +1832,7 @@
       "careers_url": "https://www.energiekontor.de",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -1869,7 +1872,7 @@
       "careers_url": "https://www.pne-ag.com",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -1911,7 +1914,7 @@
       "careers_url": "https://www.ilmatar.fi",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -1951,7 +1954,7 @@
       "careers_url": "https://flexens.com",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -1991,7 +1994,7 @@
       "careers_url": "https://p2x.fi",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2031,7 +2034,7 @@
       "careers_url": "https://www.aboenergy.com",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2076,7 +2079,10 @@
         "ats": "teamtailor",
         "url": "https://careers.atnorth.com",
         "detected": "2026-11-02, set manually (research)",
-        "check": null
+        "check": {
+          "date": "2026-11-09",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -2117,9 +2123,13 @@
       },
       "careers_url": "https://verne.co",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
-        "check": null
+        "ats": "ashby",
+        "id": "verne",
+        "detected": "2026-11-09, name guess – please verify",
+        "check": {
+          "date": "2026-11-09",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -2160,7 +2170,7 @@
       "careers_url": "https://polarnode.com",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2205,7 +2215,7 @@
         "url": "https://career.ecodatacenter.tech",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -2248,7 +2258,7 @@
       "careers_url": "https://greenmountain.no",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2291,7 +2301,7 @@
         "url": "https://careers.bulkinfrastructure.com",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -2334,7 +2344,7 @@
       "careers_url": "https://www.locusenergy.se",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2377,7 +2387,7 @@
       "careers_url": "https://www.elenia.fi",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2420,7 +2430,7 @@
       "careers_url": "https://www.ellevio.se",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2465,7 +2475,7 @@
         "url": "https://adven.teamtailor.com",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -2508,7 +2518,7 @@
       "careers_url": "https://caruna.fi",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2552,7 +2562,10 @@
         "ats": "greenhouse",
         "id": "eqtpartners",
         "detected": "2026-11-02, set manually (research)",
-        "check": null
+        "check": {
+          "date": "2026-11-09",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -2596,7 +2609,10 @@
         "ats": "teamtailor",
         "url": "https://careers.taaleri.com",
         "detected": "2026-11-02, set manually (research)",
-        "check": null
+        "check": {
+          "date": "2026-11-09",
+          "ok": true
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -2640,7 +2656,7 @@
         "url": "https://ardian.wd103.myworkdayjobs.com/ArdianCareers",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -2683,7 +2699,10 @@
         "ats": "successfactors",
         "url": "https://careers.allianz.com",
         "detected": "2026-11-02, set manually (research)",
-        "check": null
+        "check": {
+          "date": "2026-11-09",
+          "ok": false
+        }
       },
       "linkedin_id": null,
       "sources": [
@@ -2726,7 +2745,7 @@
         "url": "https://careers.nordea.com",
         "detected": "2026-11-02, set manually",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -2887,7 +2906,7 @@
       "careers_url": "https://www.kfw-ipex-bank.de",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2927,7 +2946,7 @@
       "careers_url": "https://www.pensiondanmark.com",
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-02, no supported job system found",
+        "detect_failed": "2026-11-09, no supported job system found",
         "check": null
       },
       "linkedin_id": null,
@@ -2972,7 +2991,7 @@
         "url": "https://jobs.areim.se",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -3016,7 +3035,7 @@
         "url": "https://infranode.teamtailor.com",
         "detected": "2026-11-02, from careers page",
         "check": {
-          "date": "2026-11-02",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -3095,7 +3114,7 @@
         "url": "https://careers.ren-gas.com",
         "detected": "2026-11-03, from careers page",
         "check": {
-          "date": "2026-11-03",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -3139,7 +3158,7 @@
         "url": "https://careers.omv.com",
         "detected": "2026-11-05, from careers page",
         "check": {
-          "date": "2026-11-05",
+          "date": "2026-11-09",
           "ok": true
         }
       },
@@ -3261,7 +3280,7 @@
         "id": "skynrg",
         "detected": "2026-11-05, name guess – please verify",
         "check": {
-          "date": "2026-11-05",
+          "date": "2026-11-09",
           "ok": true
         }
       },
