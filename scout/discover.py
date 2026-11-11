@@ -55,6 +55,8 @@ PATTERNS: list[tuple[str, re.Pattern, str]] = [
     ("personio", re.compile(r"https?://([\w-]+)\.jobs\.personio\.(?:de|com)", re.I), "id"),
     ("recruitee", re.compile(r"https?://([\w-]+)\.recruitee\.com", re.I), "id"),
     ("teamtailor", re.compile(r"https?://([\w-]+)\.teamtailor\.com", re.I), "url"),
+    ("easycruit", re.compile(r"https?://([\w-]+)\.easycruit\.com", re.I), "url"),
+    ("avature", re.compile(r"(https?://[\w.-]+/[a-z]{2}_[A-Z]{2}/[\w-]+)/(?:JobDetail|SearchJobs)\b"), "url"),
 ]
 _TT_RESERVED = {"www", "app", "api", "assets", "career", "support", "scripts", "status", "partners", "blog"}
 TT_MARKERS = re.compile(r"teamtailor-cdn|assets\.teamtailor|data-teamtailor|powered by teamtailor", re.I)
@@ -74,6 +76,12 @@ def _match_systems(text: str) -> dict | None:
                 if site.lower() in ("wday", "en", "job"):
                     continue
                 return {"ats": "workday", "url": f"https://{tenant}.{shard}.myworkdayjobs.com/{site}"}
+            if ats == "easycruit":
+                if m.group(1).lower() in ("www", "app", "api"):
+                    continue
+                return {"ats": "easycruit", "url": f"https://{m.group(1).lower()}.easycruit.com"}
+            if ats == "avature":
+                return {"ats": "avature", "url": m.group(1)}
             if ats == "teamtailor":
                 if m.group(1).lower() in _TT_RESERVED:
                     continue
@@ -163,7 +171,36 @@ def _probe_teamtailor(session, base: str) -> bool:
         return False
 
 
+def _probe_easycruit(session, base: str) -> bool:
+    """True if `base` (https://<name>.easycruit.com) serves the vacancy XML list."""
+    try:
+        r = _get(session, base.rstrip("/") + "/export/xml/vacancy/list.xml",
+                 headers={"Accept": "application/xml, text/xml"})
+        if r.status_code != 200:
+            return False
+        ET.fromstring(r.content)
+        return True
+    except Exception:
+        return False
+
+
+def _probe_avature(session, root: str) -> bool:
+    """True if `root` (https://<site>/<locale>/<portal>) is an Avature job portal."""
+    try:
+        r = _get(session, root.rstrip("/") + "/SearchJobs/feed/", params={"jobRecordsPerPage": 1})
+        if r.status_code == 200 and b"<rss" in r.content[:2000]:
+            return True
+        r = _get(session, root.rstrip("/") + "/SearchJobs", headers={"Accept": "text/html"})
+        return r.status_code == 200 and "JobDetail" in r.text
+    except Exception:
+        return False
+
+
 def _validate(session, found: dict) -> bool:
+    if found["ats"] == "easycruit":
+        return _probe_easycruit(session, found["url"])
+    if found["ats"] == "avature":
+        return _probe_avature(session, found["url"])
     if found["ats"] == "teamtailor":
         return _probe_teamtailor(session, found["url"])
     if found["ats"] == "workday":
