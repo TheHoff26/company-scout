@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "updated": "2026-11-11T19:00:00Z",
+  "updated": "2026-11-11",
   "segments": [
     {
       "id": "utilities",
@@ -1030,7 +1030,7 @@
       "financials": {
         "year": 2025,
         "currency": "EUR",
-        "revenue_m": 1244.0,
+        "revenue_m": 1244,
         "operating_profit_m": 110.5,
         "operating_profit_label": "",
         "net_profit_m": null,
@@ -1208,7 +1208,7 @@
       "financials": {
         "year": 2025,
         "currency": "EUR",
-        "revenue_m": 34390.0,
+        "revenue_m": 34390,
         "operating_profit_m": 5072.3,
         "operating_profit_label": "EBITDA",
         "net_profit_m": -206.8,
@@ -1571,7 +1571,7 @@
       "financials": {
         "year": 2025,
         "currency": "NOK",
-        "revenue_m": 571.0,
+        "revenue_m": 571,
         "operating_profit_m": null,
         "operating_profit_label": "",
         "net_profit_m": null,
@@ -3472,8 +3472,9 @@
       },
       "jobs": {
         "ats": "workday",
-        "url": "https://mabanaft.wd3.myworkdayjobs.com/en-US/Mabanaft",
-        "detected": "2026-11-11, set manually – job board URL added"
+        "id": "filled in automatically",
+        "detected": "2026-11-11, set manually",
+        "check": null
       },
       "sources": [
         "https://www.mbenergy.com/global/en/about-us/mabanaft-group"
