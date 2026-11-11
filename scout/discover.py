@@ -184,14 +184,28 @@ def _probe_easycruit(session, base: str) -> bool:
         return False
 
 
-def _probe_avature(session, root: str) -> bool:
-    """True if `root` (https://<site>/<locale>/<portal>) is an Avature job portal."""
+def _probe_avature(session, url: str) -> bool:
+    """True if `url` is an Avature job portal or one of its job list pages."""
+    m = re.match(r"^(https?://[^/]+/[a-z]{2}_[A-Z]{2}/[^/?#]+)", url)
+    root = m.group(1) if m else url.rstrip("/")
     try:
-        r = _get(session, root.rstrip("/") + "/SearchJobs/feed/", params={"jobRecordsPerPage": 1})
+        r = _get(session, root + "/SearchJobs/feed/", params={"jobRecordsPerPage": 1})
         if r.status_code == 200 and b"<rss" in r.content[:2000]:
             return True
-        r = _get(session, root.rstrip("/") + "/SearchJobs", headers={"Accept": "text/html"})
-        return r.status_code == 200 and "JobDetail" in r.text
+        for page in dict.fromkeys([url, root + "/SearchJobs", root + "/Jobs"]):
+            r = _get(session, page, headers={"Accept": "text/html"})
+            if r.status_code == 200 and re.search(r"/(JobDetail|FolderDetail)/", r.text):
+                return True
+    except Exception:
+        pass
+    return False
+
+
+def _probe_phenom(session, url: str) -> bool:
+    """True if `url` (e.g. https://careers.x.com/global/en) serves Phenom search results."""
+    try:
+        r = _get(session, url.rstrip("/") + "/search-results", headers={"Accept": "text/html"})
+        return r.status_code == 200 and '"eagerLoadRefineSearch"' in r.text
     except Exception:
         return False
 
@@ -201,6 +215,8 @@ def _validate(session, found: dict) -> bool:
         return _probe_easycruit(session, found["url"])
     if found["ats"] == "avature":
         return _probe_avature(session, found["url"])
+    if found["ats"] == "phenom":
+        return _probe_phenom(session, found["url"])
     if found["ats"] == "teamtailor":
         return _probe_teamtailor(session, found["url"])
     if found["ats"] == "workday":
