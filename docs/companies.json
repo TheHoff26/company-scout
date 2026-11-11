@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "updated": "2026-11-09",
+  "updated": "2026-11-11",
   "segments": [
     {
       "id": "utilities",
@@ -3336,6 +3336,47 @@
       "linkedin_id": null,
       "updated": "2026-11-06",
       "added": "2026-11-06"
+    },
+    {
+      "id": "mb-energy",
+      "name": "MB Energy",
+      "rating": "A",
+      "status": "watching",
+      "segment": "trading",
+      "segments_secondary": [
+        "portfolio"
+      ],
+      "financials": {
+        "currency": "EUR",
+        "year": null,
+        "revenue_m": null,
+        "employees": null,
+        "operating_profit_m": null,
+        "net_profit_m": null,
+        "net_debt_m": null,
+        "equity_ratio_pct": null,
+        "total_assets_m": null,
+        "operating_profit_label": "",
+        "market_cap": null
+      },
+      "jobs": {
+        "ats": "workday",
+        "id": "detect automatically",
+        "detected": "2026-11-11, set manually",
+        "check": null
+      },
+      "sources": [],
+      "private": null,
+      "segment_detail": "Fuels",
+      "country": "Germany",
+      "hq": "Hamburg",
+      "ownership": "Private",
+      "description": "",
+      "fit": "",
+      "careers_url": "https://mabanaft.wd3.myworkdayjobs.com/en-US/Mabanaft/jobs",
+      "linkedin_id": null,
+      "updated": "2026-11-11",
+      "added": "2026-11-11"
     }
   ]
 }
