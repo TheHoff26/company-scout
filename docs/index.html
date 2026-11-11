@@ -44,7 +44,7 @@ h1{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing
 .btn:disabled{opacity:.45;cursor:not-allowed}
 .lock{display:inline-flex;align-items:center;gap:6px}
 .lock svg{width:15px;height:15px}
-.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;margin-bottom:16px}
+.filters{display:grid;grid-template-columns:2fr repeat(5,1fr);gap:10px;margin-bottom:16px}
 @media (max-width:860px){.filters{grid-template-columns:1fr 1fr}.filters .q{grid-column:1/-1}}
 .filters label{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
 input,select,textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%}
@@ -148,14 +148,15 @@ fieldset{border:none;padding:0;margin:0}
     <label class="q">Search<input type="search" id="f-q" placeholder="Company, segment, country, description…"></label>
     <label>Segment<select id="f-seg"><option value="">All segments</option></select></label>
     <label>Rating<select id="f-rating"><option value="">All</option><option>A</option><option>B</option><option>C</option></select></label>
+    <label>Size<select id="f-size"><option value="">All sizes</option><option value="0-49">Under 50 employees</option><option value="50-249">50 – 249</option><option value="250-999">250 – 999</option><option value="1000-9999">1,000 – 9,999</option><option value="10000-">10,000 or more</option><option value="none">Not known</option></select></label>
     <label>Status<select id="f-status"><option value="">All</option><option value="watching">Watching</option><option value="applied">Applied</option><option value="paused">Paused</option></select></label>
-    <label>Sort by<select id="f-sort"><option value="rating">Rating</option><option value="name">Name</option><option value="revenue">Revenue</option><option value="employees">Employees</option><option value="updated">Last updated</option></select></label>
+    <label>Sort by<select id="f-sort"><option value="rating">Rating</option><option value="name">Name</option><option value="employees">Employees</option><option value="revenue">Revenue</option><option value="updated">Last updated</option></select></label>
   </div>
 
   <table class="reg" aria-label="Companies">
     <thead><tr>
       <th>Rating</th><th>Company</th><th>Segment</th><th>Country</th>
-      <th class="num">Revenue</th><th class="num">Op. profit</th><th class="num">Employees</th><th class="num">Market cap</th>
+      <th class="num">Employees</th><th class="num">Revenue</th><th class="num">Op. profit</th><th class="num">Market cap / AUM</th>
       <th>Status</th><th>Job source</th>
     </tr></thead>
     <tbody id="rows"></tbody>
@@ -220,6 +221,7 @@ fieldset{border:none;padding:0;margin:0}
           <option value="successfactors">SAP SuccessFactors</option><option value="workday">Workday</option>
           <option value="greenhouse">Greenhouse</option><option value="lever">Lever</option><option value="ashby">Ashby</option>
           <option value="smartrecruiters">SmartRecruiters</option><option value="personio">Personio</option><option value="recruitee">Recruitee</option><option value="teamtailor">Teamtailor</option>
+          <option value="avature">Avature</option><option value="easycruit">EasyCruit</option>
           <option value="linkedin">LinkedIn link only</option>
         </select></label>
         <label>Job system address or account<input name="ats_target" placeholder="filled in automatically"></label>
@@ -306,7 +308,7 @@ const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls)
 const store = { get(k){ try { return localStorage.getItem(k) || ""; } catch(e) { return ""; } },
                 set(k,v){ try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch(e) {} } };
 const ATS = {successfactors:"SAP SuccessFactors", workday:"Workday", greenhouse:"Greenhouse", lever:"Lever", ashby:"Ashby",
-  smartrecruiters:"SmartRecruiters", personio:"Personio", recruitee:"Recruitee", teamtailor:"Teamtailor", linkedin:"LinkedIn link only"};
+  smartrecruiters:"SmartRecruiters", personio:"Personio", recruitee:"Recruitee", teamtailor:"Teamtailor", avature:"Avature", easycruit:"EasyCruit", linkedin:"LinkedIn link only"};
 const FILE = "docs/companies.json";
 
 let data = null, sha = null, key = null, privateCache = {}, editing = null;
@@ -383,6 +385,11 @@ async function open_(k, box){
 /* ---------- formatting ---------- */
 const segName = id => (data.segments.find(s => s.id === id) || {}).name || id || "–";
 const fmt = (v, d = 0) => v == null || v === "" || isNaN(v) ? "–" : Number(v).toLocaleString("en-GB", {maximumFractionDigits: d});
+function empText(f){
+  if (!f.employees) return f.employees_label || "–";
+  const approx = /approx|around|about|~|\+|over|est/i.test(f.employees_label || "");
+  return (approx ? "≈ " : "") + fmt(f.employees);
+}
 function money(m, cur){ if (m == null || m === "") return "–"; const v = Number(m); const c = cur === "EUR" || !cur ? "€" : cur + " ";
   const sign = v < 0 ? "−" : "", a = Math.abs(v);
   return a >= 1000 ? `${sign}${c}${(a / 1000).toLocaleString("en-GB", {minimumFractionDigits: 1, maximumFractionDigits: 1})} bn` : `${sign}${c}${fmt(a)} m`; }
@@ -409,7 +416,10 @@ function jobText(c){
 /* ---------- list ---------- */
 function render(){
   const q = $("#f-q").value.trim().toLowerCase(), seg = $("#f-seg").value, rt = $("#f-rating").value, st = $("#f-status").value, sort = $("#f-sort").value;
-  let rows = data.companies.filter(c =>
+  const size = $("#f-size").value;
+  const inSize = c => { if (!size) return true; const e = (c.financials || {}).employees;
+    if (size === "none") return !e; if (!e) return false; const [lo, hi] = size.split("-"); return e >= +lo && (hi === "" || e <= +hi); };
+  let rows = data.companies.filter(c => inSize(c) &&
     (!seg || c.segment === seg || (c.segments_secondary || []).includes(seg)) && (!rt || c.rating === rt) && (!st || c.status === st) &&
     (!q || [c.name, c.segment_detail, segName(c.segment), c.country, c.hq, c.description, c.fit].join(" ").toLowerCase().includes(q)));
   const f = c => c.financials || {};
@@ -428,14 +438,15 @@ function render(){
     const td = (cls, child) => { const d = el("td", cls); if (child instanceof Node) d.append(child); else d.textContent = child; tr.append(d); return d; };
     td("c-rating", el("span", "rating r-" + (c.rating || "C"), c.rating || "–"));
     const co = el("div", "co"); co.append(el("b", null, c.name), el("span", null, c.segment_detail || ""));
-    const fm = el("span", "fig-m", [money(f(c).revenue_m, f(c).currency) + " revenue", fmt(f(c).employees) + " employees", c.country].filter(x => !/^–/.test(x)).join(" · "));
+    const fm = el("span", "fig-m", [empText(f(c)) + " employees", money(f(c).revenue_m, f(c).currency) + " revenue", c.country].filter(x => !/^–/.test(x)).join(" · "));
     co.append(fm); td("c-co", co);
     td("c-seg hide-m", segName(c.segment));
     td("hide-m", c.country || "–");
-    td("num hide-m", money(f(c).revenue_m, f(c).currency));
-    td("num hide-m", money(f(c).operating_profit_m, f(c).currency));
-    td("num hide-m", f(c).employees ? fmt(f(c).employees) : (f(c).employees_label || "–"));
-    td("num hide-m", f(c).aum_bn ? "AUM €" + fmt(f(c).aum_bn) + " bn" : mcap(f(c)));
+    const ec = td("num hide-m emp", empText(f(c)));
+    ec.title = [f(c).employees_label, f(c).year ? "Figures " + f(c).year : "", f(c).verified ? "checked " + f(c).verified : ""].filter(Boolean).join(" · ");
+    td("num hide-m", money(f(c).revenue_m, f(c).currency)).title = f(c).revenue_label || "";
+    td("num hide-m", money(f(c).operating_profit_m, f(c).currency)).title = f(c).operating_profit_label || "";
+    td("num hide-m", f(c).aum_bn ? "AUM " + (f(c).aum_currency && f(c).aum_currency !== "EUR" ? f(c).aum_currency + " " : "€") + fmt(f(c).aum_bn) + " bn" : mcap(f(c)));
     td("c-status", el("span", "pill st-" + c.status, c.status ? c.status[0].toUpperCase() + c.status.slice(1) : "–"));
     const jt = jobText(c); td("c-jobs", el("span", "src " + jt.cls, jt.t));
     tr.onclick = () => openCompany(c.id);
@@ -447,7 +458,7 @@ function render(){
   $("#t-applied").textContent = data.companies.filter(c => c.status === "applied").length;
   $("#updated").textContent = "Register updated " + (data.updated || "–");
 }
-["#f-q", "#f-seg", "#f-rating", "#f-status", "#f-sort"].forEach(s => $(s).addEventListener("input", render));
+["#f-q", "#f-seg", "#f-rating", "#f-size", "#f-status", "#f-sort"].forEach(s => $(s).addEventListener("input", render));
 
 function banner(msg, err){ const b = $("#banner"); b.replaceChildren(); if (msg){ const d = el("div", "banner" + (err ? " err" : ""), msg); b.append(d); } }
 

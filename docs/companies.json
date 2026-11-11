@@ -1,11 +1,17 @@
 {
   "schema": 3,
-  "updated": "2026-11-11",
+  "updated": "2026-11-11T19:00:00Z",
   "segments": [
     {
       "id": "utilities",
       "name": "Nordic utilities",
       "definition": "Power and heat producers, grid-connected generators and integrated energy companies in the Nordics.",
+      "typical_roles": "Strategy, origination, portfolio management, trading, business development"
+    },
+    {
+      "id": "eu_utilities",
+      "name": "European utilities",
+      "definition": "Integrated utilities and power producers outside the Nordics (e.g. Germany, Austria) – generation, grids, trading and retail.",
       "typical_roles": "Strategy, origination, portfolio management, trading, business development"
     },
     {
@@ -199,29 +205,32 @@
       "financials": {
         "year": 2025,
         "currency": "EUR",
-        "revenue_m": 7200,
+        "revenue_m": 7234.2,
         "operating_profit_m": null,
         "operating_profit_label": "",
         "net_profit_m": 99.2,
-        "employees": null,
+        "employees": 1000,
         "net_debt_m": null,
         "equity_ratio_pct": 59,
         "total_assets_m": null,
         "market_cap": null,
-        "net_profit_label": "profit for the period"
+        "net_profit_label": "profit for the period",
+        "employees_label": "over 1,000",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://st1.com/about-us/people-and-careers/open-positions",
       "jobs": {
         "ats": "linkedin",
-        "detected": "2026-11-02, set manually",
-        "check": null
+        "detected": "2026-11-11, checked – recruits via Barona / Laura – not supported"
       },
       "linkedin_id": null,
       "sources": [
+        "https://st1.com/about-us/company-info/key-figures-and-ir",
+        "https://www.sttinfo.fi/tiedote/72266632/st1-oyn-valitilinpaatostiedote-tammi-kesakuu-2026?lang=fi",
         "https://st1.com/st1-nordic-oys-interim-report-january-june-2024"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-03",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -240,25 +249,27 @@
       "description": "Fund manager specialised in energy infrastructure: offshore and onshore wind, solar, storage, transmission, bioenergy and Power-to-X; about EUR 32 bn under management across eleven funds.",
       "fit": "Renewables and PtX origination and business development, investment strategy, international; Copenhagen is a target location.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
         "aum_bn": 32,
-        "employees": 500,
-        "employees_label": "500+",
-        "note": "Private fund manager: no public revenue or profit figures; AUM figure undated."
+        "employees": 2300,
+        "employees_label": "2,300+ (CIP platform)",
+        "note": "Private fund manager: no public revenue or profit figures; AUM figure undated.",
+        "verified": "2026-11-11"
       },
-      "careers_url": "https://www.cip.com/careers",
+      "careers_url": "https://cip.easycruit.com",
       "jobs": {
-        "ats": "linkedin",
-        "detected": "2026-11-02, set manually",
-        "check": null
+        "ats": "easycruit",
+        "url": "https://cip.easycruit.com",
+        "detected": "2026-11-11, set manually – EasyCruit (cip.easycruit.com)"
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.cip.com/media/yducezvp/cip-esg-report-2025.pdf",
         "https://en.wikipedia.org/wiki/Copenhagen_Infrastructure_Partners"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -542,15 +553,14 @@
       "careers_url": "https://www.kone.com/en/careers",
       "jobs": {
         "ats": "linkedin",
-        "detected": "2026-11-02, set manually",
-        "check": null
+        "detected": "2026-11-11, checked – own career site (careers.kone.com) – not supported"
       },
       "linkedin_id": null,
       "sources": [
         "https://news.cision.com/kone-oyj/r/financial-statement-bulletin-of-kone-corporation-for-january-december-2025,c4303674"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -573,7 +583,7 @@
         "currency": "EUR",
         "revenue_m": 20000,
         "operating_profit_m": 88,
-        "operating_profit_label": "earnings before tax",
+        "operating_profit_label": "profit before tax",
         "net_profit_m": null,
         "employees": null,
         "net_debt_m": null,
@@ -581,20 +591,23 @@
         "total_assets_m": null,
         "market_cap": null,
         "turnover_note": "gross turnover ≈€20 bn",
-        "capacity_note": "16 GW contracted renewable & flexible capacity"
+        "capacity_note": "16 GW contracted renewable & flexible capacity",
+        "revenue_label": "gross turnover",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://danskecommodities.com/join-us/vacancies",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-10, no supported job system found",
-        "check": null
+        "ats": "teamtailor",
+        "url": "https://danskecommoditiesas.teamtailor.com",
+        "detected": "2026-11-11, verified – job ads on danskecommoditiesas.teamtailor.com"
       },
       "linkedin_id": null,
       "sources": [
+        "https://danskecommodities.com/media/press/danske-commodities-delivered-solid-earnings-in-low-volatility-markets-during-2025",
         "https://finance.yahoo.com/sectors/energy/articles/danske-commodities-navigates-low-volatility-064133611.html"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-03",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -613,17 +626,18 @@
       "description": "Trading and asset-optimisation arm of Centrica (formerly Neas Energy); route-to-market, PPAs and optimisation for renewables and flexible assets.",
       "fit": "Origination, PPA and optimisation roles; trading background directly relevant.",
       "financials": {
-        "year": null,
-        "currency": "EUR",
+        "year": 2025,
+        "currency": "DKK",
         "revenue_m": null,
-        "operating_profit_m": null,
-        "operating_profit_label": "",
+        "operating_profit_m": 66,
+        "operating_profit_label": "profit before tax",
         "net_profit_m": null,
         "employees": null,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "verified": "2026-11-11"
       },
       "careers_url": "https://centricaenergy.com",
       "jobs": {
@@ -637,10 +651,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://centricaenergy.com/media-centre/centrica-energy-trading-as-publishes-annual-report-for-2025/",
         "https://www.topograph.co/companies/dk/centrica-energy-trading-a-s-20293195"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -650,7 +665,7 @@
       "status": "watching",
       "segment": "trading",
       "segments_secondary": [
-        "utilities"
+        "eu_utilities"
       ],
       "segment_detail": "Global commodity trading",
       "country": "Germany",
@@ -686,7 +701,7 @@
         "https://www.rwe.com/en/the-group/organisational-structure/rwest"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null,
       "research_note": "Shares the RWE career site with RWE AG – jobs of both appear."
     },
@@ -739,7 +754,7 @@
       "status": "applied",
       "segment": "trading",
       "segments_secondary": [
-        "utilities",
+        "eu_utilities",
         "developers"
       ],
       "segment_detail": "Gas, power trading & generation",
@@ -751,7 +766,7 @@
       "financials": {
         "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
+        "revenue_m": 72790,
         "operating_profit_m": 1097,
         "operating_profit_label": "adjusted EBITDA",
         "net_profit_m": 544,
@@ -760,20 +775,23 @@
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "market_cap": null,
-        "net_profit_label": "adjusted net income"
+        "net_profit_label": "adjusted net income",
+        "employees_label": "about 7,000",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://careers.uniper.energy/",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-10, no supported job system found",
-        "check": null
+        "ats": "linkedin",
+        "detected": "2026-11-11, checked – own career site (careers.uniper.energy) – not supported"
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.uniper.energy/system/files/2026-03/2026_03_11_FY_2025_Uniper_Press_Release.pdf",
+        "https://stockanalysis.com/quote/etr/UN0/revenue/",
         "https://www.uniper.energy/news/uniper-achieves-financial-targets-for-fiscal-year-2025-and-proposes-dividend-payment-of-072-per-share"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-03",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -803,20 +821,20 @@
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "market_cap": null,
-        "employees_label": "450+"
+        "employees_label": "450+",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.trianel.com",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-09, no supported job system found",
-        "check": null
+        "ats": "linkedin",
+        "detected": "2026-11-11, checked – own career pages (PDF job ads) – not supported"
       },
       "linkedin_id": null,
       "sources": [
         "https://www.trianel.com/pressemeldungen/trianel-delivers-another-strong-annual-result"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -889,18 +907,18 @@
         "total_assets_m": null,
         "market_cap": null
       },
-      "careers_url": "https://www.nordpoolgroup.com",
+      "careers_url": "https://www.euronext.com/en/about/careers/nordpool",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-09, no supported job system found",
-        "check": null
+        "ats": "workday",
+        "url": "https://hrhub.wd3.myworkdayjobs.com/Euronext_Career_Page",
+        "detected": "2026-11-11, verified – Nord Pool jobs are posted on the Euronext group Workday board (also lists other Euronext jobs)"
       },
       "linkedin_id": null,
       "sources": [
         "https://euronext.com/en/about/media/euronext-press-releases/euronext-acquire-control-nord-pool-leading-physical-power"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -919,28 +937,30 @@
       "description": "One of Europe's largest power and heat producers, active in the Nordics, Germany, the Netherlands and the UK.",
       "fit": "Strategy, trading and business development across Nordic and German markets.",
       "financials": {
-        "year": null,
-        "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
-        "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
+        "year": 2025,
+        "currency": "SEK",
+        "revenue_m": 234915,
+        "operating_profit_m": 30937,
+        "operating_profit_label": "underlying EBIT",
+        "net_profit_m": 19700,
+        "employees": 20869,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "verified": "2026-11-11"
       },
       "careers_url": "https://careers.vattenfall.com",
       "jobs": {
         "ats": "linkedin",
-        "detected": "2026-11-02, set manually – own career site, not supported",
-        "check": null
+        "detected": "2026-11-11, checked – own career site (Phenom) – not supported"
       },
       "linkedin_id": null,
-      "sources": [],
+      "sources": [
+        "https://group.vattenfall.com/globalassets/com/about-us/vattenfall-in-brief/vattenfall-in-brief-onepager-2026-03.pdf"
+      ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -965,12 +985,13 @@
         "operating_profit_m": 26469,
         "operating_profit_label": "underlying EBIT",
         "net_profit_m": 7028,
-        "employees": 6200,
+        "employees": 6513,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "market_cap": null,
-        "employees_label": "≈6,200"
+        "employees_label": "6,513 (2025)",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://careers.smartrecruiters.com/Statkraft1",
       "jobs": {
@@ -984,10 +1005,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.sustainabilityreports.com/statkraft/2025/annual-report",
         "https://www.statkraft.com/IR/financial-key-figures/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1006,17 +1028,18 @@
       "description": "Helsinki's energy company producing electricity and district heat, transforming heat production away from fossil fuels.",
       "fit": "Decarbonisation, electrification of heat and trading; home market.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
+        "revenue_m": 1244.0,
+        "operating_profit_m": 110.5,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 621,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.helen.fi/en/about-us/join-us/open-positions",
       "jobs": {
@@ -1025,9 +1048,11 @@
         "check": null
       },
       "linkedin_id": null,
-      "sources": [],
+      "sources": [
+        "https://www.asiakastieto.fi/yritykset/fi/helen-oy/26305734/yleiskuva"
+      ],
       "added": "2026-11-02",
-      "updated": "2026-11-03",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1035,7 +1060,7 @@
       "name": "RWE",
       "rating": "A",
       "status": "watching",
-      "segment": "utilities",
+      "segment": "eu_utilities",
       "segments_secondary": [
         "developers",
         "trading"
@@ -1047,17 +1072,19 @@
       "description": "Major German generator and one of the world's largest renewable developers, with hydrogen and storage activities.",
       "fit": "Strategy, renewables and hydrogen business development; German language an advantage.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
         "revenue_m": null,
-        "operating_profit_m": null,
-        "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
-        "net_debt_m": null,
+        "operating_profit_m": 5100,
+        "operating_profit_label": "adjusted EBITDA",
+        "net_profit_m": 1800,
+        "employees": 19345,
+        "net_debt_m": 10900,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "net_profit_label": "adjusted net income",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://jobs.rwe.com",
       "jobs": {
@@ -1070,9 +1097,12 @@
         }
       },
       "linkedin_id": null,
-      "sources": [],
+      "sources": [
+        "https://www.rwe.com/en/investor-relations/financial-calendar-and-publications/news-and-ad-hoc-announcements/news/news-2026-03-12/",
+        "https://stockanalysis.com/quote/etr/RWE/employees/"
+      ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null,
       "research_note": "Shares the career site with RWE Supply & Trading."
     },
@@ -1092,28 +1122,32 @@
       "description": "Global offshore wind leader, currently focusing its portfolio and reducing costs.",
       "fit": "Commercial and portfolio roles in offshore wind.",
       "financials": {
-        "year": null,
-        "currency": "EUR",
+        "year": 2025,
+        "currency": "DKK",
         "revenue_m": null,
-        "operating_profit_m": null,
-        "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
-        "net_debt_m": null,
+        "operating_profit_m": 22448,
+        "operating_profit_label": "EBITDA",
+        "net_profit_m": 3165,
+        "employees": 8000,
+        "net_debt_m": 18978,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "approx. 8,000",
+        "verified": "2026-11-11"
       },
-      "careers_url": "https://orsted.com/en/careers/",
+      "careers_url": "https://orsted.com/en/careers/vacancies-list",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-10, no supported job system found",
-        "check": null
+        "ats": "successfactors",
+        "url": "https://applyforjob.orsted.com",
+        "detected": "2026-11-11, verified – job ads link to applyforjob.orsted.com (SAP SuccessFactors)"
       },
       "linkedin_id": null,
-      "sources": [],
+      "sources": [
+        "https://orsted.com/en/company-announcement-list/2026/02/a-stronger-and-morecompetitiveorstedafter-a-defini-147853101"
+      ],
       "added": "2026-11-02",
-      "updated": "2026-11-03",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1146,14 +1180,14 @@
       },
       "careers_url": "https://www.hafslund.no",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-09, no supported job system found",
-        "check": null
+        "ats": "teamtailor",
+        "url": "https://karriere.hafslund.no",
+        "detected": "2026-11-11, verified – karriere.hafslund.no is a Teamtailor site"
       },
       "linkedin_id": null,
       "sources": [],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1161,7 +1195,7 @@
       "name": "EnBW",
       "rating": "B",
       "status": "watching",
-      "segment": "utilities",
+      "segment": "eu_utilities",
       "segments_secondary": [
         "developers"
       ],
@@ -1172,28 +1206,32 @@
       "description": "Integrated German energy company in generation, renewables, grids and retail.",
       "fit": "Strategy and renewables business development; German required.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
-        "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
-        "net_debt_m": null,
+        "revenue_m": 34390.0,
+        "operating_profit_m": 5072.3,
+        "operating_profit_label": "EBITDA",
+        "net_profit_m": -206.8,
+        "employees": 29728,
+        "net_debt_m": 13151.5,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "29,728 FTE (31,541 headcount)",
+        "verified": "2026-11-11"
       },
-      "careers_url": "https://careers.enbw.com/global/en/management",
+      "careers_url": "https://careers.enbw.com/en_US/careers",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-10, no supported job system found",
-        "check": null
+        "ats": "avature",
+        "url": "https://careers.enbw.com/en_US/careers",
+        "detected": "2026-11-11, set manually – Avature career site"
       },
       "linkedin_id": null,
-      "sources": [],
+      "sources": [
+        "https://www.enbw.com/geschaeftsbericht-2025/kennzahlen/"
+      ],
       "added": "2026-11-02",
-      "updated": "2026-11-03",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1201,7 +1239,7 @@
       "name": "E.ON",
       "rating": "B",
       "status": "watching",
-      "segment": "utilities",
+      "segment": "eu_utilities",
       "segments_secondary": [
         "energy_services"
       ],
@@ -1212,28 +1250,32 @@
       "description": "European energy network and customer-solutions company.",
       "fit": "Energy services and B2B solutions; grid focus is a weaker fit.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
         "revenue_m": null,
-        "operating_profit_m": null,
-        "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
+        "operating_profit_m": 9800,
+        "operating_profit_label": "EBITDA",
+        "net_profit_m": 3000,
+        "employees": 78996,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "net_profit_label": "adjusted net income",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://jobs.eon.com",
       "jobs": {
         "ats": "linkedin",
-        "detected": "2026-11-02, set manually – own career site, not supported",
-        "check": null
+        "detected": "2026-11-11, checked – own career site – not supported"
       },
       "linkedin_id": null,
-      "sources": [],
+      "sources": [
+        "https://www.investegate.co.uk/announcement/eqs/e-on-ag--0mpp/eqs-news-e-on-continues-growth-path-in-2025-/9445200",
+        "https://stockanalysis.com/quote/etr/EOAN/employees/"
+      ],
       "added": "2026-11-02",
-      "updated": "2026-11-09",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1241,7 +1283,7 @@
       "name": "MVV Energie",
       "rating": "C",
       "status": "watching",
-      "segment": "utilities",
+      "segment": "eu_utilities",
       "segments_secondary": [
         "energy_services"
       ],
@@ -1252,17 +1294,19 @@
       "description": "Regional German utility in generation, heat, renewables and energy services.",
       "fit": "Decarbonisation of heat and energy services; German required.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
-        "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
+        "revenue_m": 6083,
+        "operating_profit_m": 360,
+        "operating_profit_label": "adjusted EBIT",
+        "net_profit_m": 171,
+        "employees": 6811,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "6,811 (headcount, 30 Sep 2025)",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.mvv.de",
       "jobs": {
@@ -1271,9 +1315,11 @@
         "check": null
       },
       "linkedin_id": null,
-      "sources": [],
+      "sources": [
+        "https://www.mvv.de/en/journalists/press/detail/mvv-achieves-solid-earnings-and-reports-growing-volume-of-investments-in-the-energy-transition"
+      ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1292,17 +1338,19 @@
       "description": "Swedish developer and operator of grid-scale battery storage, targeting about 2 GW in the Nordics.",
       "fit": "BESS growth, trading and partnerships; fits trading and optimisation background.",
       "financials": {
-        "year": null,
-        "currency": "EUR",
-        "revenue_m": null,
+        "year": 2025,
+        "currency": "SEK",
+        "revenue_m": 39.2,
         "operating_profit_m": null,
         "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
+        "net_profit_m": -55.2,
+        "employees": 55,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "net_profit_label": "result (parent company Ingrid Capacity AB)",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.ingridcapacity.com",
       "jobs": {
@@ -1316,10 +1364,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://upplysningar.syna.se/foretag/5593690802/ingrid-capacity-ab",
         "https://energy-storage.news/swedens-ingrid-capacity-gets-us100-million-investment-from-shipping-group-bws-bess-subsidiary"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1352,16 +1401,16 @@
       },
       "careers_url": "https://flower.se",
       "jobs": {
-        "ats": "linkedin",
-        "detected": "2026-11-02, set manually – name guess rejected (unverified)",
-        "check": null
+        "ats": "teamtailor",
+        "url": "https://flower.teamtailor.com",
+        "detected": "2026-11-11, verified – job ads on flower.teamtailor.com"
       },
       "linkedin_id": null,
       "sources": [
         "https://www.ess-news.com/2026/02/06/flower-raises-e60m-in-debut-bond-as-twaice-secures-e24m-eib-financing/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-05",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1433,7 +1482,8 @@
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "market_cap": null,
-        "profit_before_tax_m": 39
+        "profit_before_tax_m": 39,
+        "verified": "2026-11-11"
       },
       "careers_url": "https://europeanenergy.com",
       "jobs": {
@@ -1447,10 +1497,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.globenewswire.com/news-release/2026/02/27/3246313/0/en/European-Energy-A-S-Full-year-2025-report.html",
         "https://solarquarter.com/2026/03/16/european-energy-reports-revenue-growth-and-expands-renewable-pipeline-in-2025/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1466,20 +1517,22 @@
       "country": "Sweden",
       "hq": "Stockholm",
       "ownership": "EQT Infrastructure VI (>90%, delisted Oct 2024)",
-      "description": "Nordic-based developer of onshore and offshore wind, solar and storage, owned by EQT Infrastructure.",
+      "description": "Nordic-based developer of onshore and offshore wind, solar and storage, owned by EQT Infrastructure. Owned by EQT.",
       "fit": "Business development and P&L roles in a PE-owned growth company.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
         "revenue_m": null,
         "operating_profit_m": null,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 510,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "510 (year-end 2025)",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.ox2.com",
       "jobs": {
@@ -1493,10 +1546,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.ox2.com/about-ox2/this-is-ox2/ox2-in-brief",
         "https://www.ox2.com/newsroom/press-releases-news/2024/delisting-of-the-shares-in-ox2-from-nasdaq-stockholm"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1515,17 +1569,18 @@
       "description": "Nordic renewable independent power producer; acquiring Orrön Energy's Nordic wind platform to roughly double production to ~2.1 TWh.",
       "fit": "Growth and portfolio roles; entering Finland.",
       "financials": {
-        "year": null,
-        "currency": "EUR",
-        "revenue_m": null,
+        "year": 2025,
+        "currency": "NOK",
+        "revenue_m": 571.0,
         "operating_profit_m": null,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 62,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "verified": "2026-11-11"
       },
       "careers_url": "https://cloudberry.no",
       "jobs": {
@@ -1535,10 +1590,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://stockanalysis.com/quote/osl/CLOUD/revenue/",
         "https://www.roschier.com/newsroom/cloudberry-acquires-a-758-gwh-nordic-wind-platform"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-09",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1617,18 +1673,14 @@
       "jobs": {
         "ats": "personio",
         "id": "terralayr",
-        "detected": "2026-11-02, name guess – please verify",
-        "check": {
-          "date": "2026-11-09",
-          "ok": true
-        }
+        "detected": "2026-11-11, verified – terralayr.jobs.personio.com"
       },
       "linkedin_id": null,
       "sources": [
         "https://en.newsroom.eurazeo.com/news/eurazeo-invests-in-terralayr-germany-s-innovative-integrated-energy-flexibility-provider-eedcf-52e2c.html"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-06",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1691,17 +1743,18 @@
       "description": "Finnish start-up operating an AI-based virtual power plant that trades batteries and renewable assets in power markets.",
       "fit": "AI + trading – matches interest in exploiting market imperfection with AI.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
+        "revenue_m": 2.6,
         "operating_profit_m": null,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 28,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.capalo.ai",
       "jobs": {
@@ -1715,10 +1768,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://search.vainu.com/company/capalo-ai-oy-taloustiedot-ja-liikevaihto/FI32682771/yritystiedot",
         "https://tech.eu/2026/02/06/capalo-ai-raises-eur11m-to-expand-battery-storage-optimization/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1749,14 +1803,14 @@
       },
       "careers_url": "https://enertrag.com",
       "jobs": {
-        "ats": "linkedin",
-        "detected": "2026-11-02, set manually – name guess rejected (unverified)",
-        "check": null
+        "ats": "smartrecruiters",
+        "id": "ENERTRAG",
+        "detected": "2026-11-11, verified – careers.smartrecruiters.com/ENERTRAG"
       },
       "linkedin_id": null,
       "sources": [],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1777,13 +1831,14 @@
         "currency": "SEK",
         "revenue_m": 3911,
         "operating_profit_m": -310,
-        "operating_profit_label": "operating profit (EBIT)",
-        "net_profit_m": null,
-        "employees": null,
+        "operating_profit_label": "EBIT",
+        "net_profit_m": -356,
+        "employees": 106,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.eolus.com",
       "jobs": {
@@ -1797,10 +1852,11 @@
       },
       "linkedin_id": null,
       "sources": [
-        "https://www.eolus.com/en/blog/mfn_news/eolus-ab-year-end-report-2025/"
+        "https://www.eolus.com/en/blog/mfn_news/eolus-ab-year-end-report-2025/",
+        "https://stockanalysis.com/quote/sto/EOLU.B/employees/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1857,17 +1913,19 @@
       "description": "German wind and solar developer and independent power producer.",
       "fit": "Business development; possible ownership change.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
-        "operating_profit_label": "",
+        "revenue_m": 376.4,
+        "operating_profit_m": 12.9,
+        "operating_profit_label": "EBIT",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 681,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "revenue_label": "total operating revenue",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.pne-ag.com",
       "jobs": {
@@ -1877,10 +1935,12 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://bourse.lavenir.net/news/pne-wind-ag/PNE3/DE/1397283/eqs-news-pne-ag-closes-the-2025-financial-year-with-successful-operational-performance-and-focuses-on-core-markets-and-profitability.html",
+        "https://stockanalysis.com/quote/etr/PNE3/employees/",
         "https://simplywall.st/stocks/us/diversified-financials/nyse-ms/morgan-stanley/news/morgan-stanley-nysems-explores-sale-of-eur-543m-stake-in-pne"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1899,17 +1959,18 @@
       "description": "Finnish wind power platform that acquires, builds and operates wind projects.",
       "fit": "Wind business development in Finland; verify current ownership.",
       "financials": {
-        "year": null,
+        "year": 2024,
         "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
+        "revenue_m": 41.5,
+        "operating_profit_m": -15.1,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 88,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.ilmatar.fi",
       "jobs": {
@@ -1919,10 +1980,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.asiakastieto.fi/yritykset/fi/ilmatar-energy-oy/33724005/yleiskuva",
         "https://www.omnescapital.com/press-release/omnes-capital-and-ilmatar-windpower-launch-joint-venture-for-nordic-wind-power-complete-the-largest-acquisition-of-a-fully-developed-wind-project-in-finland-to-date"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-03",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -1979,17 +2041,18 @@
       "description": "Operates Finland's first industrial-scale green hydrogen plant in Harjavalta; further plants planned in Joensuu and Oulu.",
       "fit": "PtX commercialisation; lower priority after focus shift.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
+        "revenue_m": 2.5,
+        "operating_profit_m": -14.6,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 22,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "verified": "2026-11-11"
       },
       "careers_url": "https://p2x.fi",
       "jobs": {
@@ -1999,10 +2062,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.asiakastieto.fi/yritykset/fi/p2x-solutions-oy/31552764/yleiskuva",
         "https://bioenergytimes.com/finlands-first-green-hydrogen-plant-inaugurated-in-harjavalta/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2121,22 +2185,18 @@
         "total_assets_m": null,
         "market_cap": null
       },
-      "careers_url": "https://verne.co",
+      "careers_url": "https://verneglobal.com/vacancies",
       "jobs": {
-        "ats": "ashby",
-        "id": "verne",
-        "detected": "2026-11-09, name guess – please verify",
-        "check": {
-          "date": "2026-11-09",
-          "ok": true
-        }
+        "ats": "linkedin",
+        "detected": "2026-11-11, set manually – Ashby guess belonged to another company (Verne, US hydrogen start-up); own vacancy page not supported"
       },
       "linkedin_id": null,
       "sources": [
+        "https://datacenterdynamics.com/en/news/ardian-completes-acquisition-of-verne-from-d9-promises-data-center-expansion",
         "https://startupfortune.com/ardian-is-betting-over-a-billion-dollars-that-the-nordics-will-power-europes-ai-infrastructure-buildout/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2414,10 +2474,10 @@
       "description": "Swedish electricity network company with almost one million customers, owned by pension investors.",
       "fit": "Grid strategy and flexibility roles.",
       "financials": {
-        "year": null,
-        "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
+        "year": 2025,
+        "currency": "SEK",
+        "revenue_m": 8902,
+        "operating_profit_m": 2906,
         "operating_profit_label": "",
         "net_profit_m": null,
         "employees": 800,
@@ -2425,7 +2485,8 @@
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "market_cap": null,
-        "employees_label": "≈800"
+        "employees_label": "800+",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.ellevio.se",
       "jobs": {
@@ -2435,10 +2496,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.ellevio.se/en/newsroom/regulatory-press-release/ellevio-ab-publishes-year-end-report-2025/",
         "https://www.ellevio.se/en/about-us/about-the-company/company-information/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2459,15 +2521,17 @@
       "financials": {
         "year": null,
         "currency": "EUR",
-        "revenue_m": null,
+        "revenue_m": 424,
         "operating_profit_m": null,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 600,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "600+",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.adven.com",
       "jobs": {
@@ -2481,10 +2545,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://adven.com/about-us/",
         "https://test.ippjournal.com/update/infracapital-amp-capital-divest-adven-to-institutional-investors-advised-by-jp-morgan"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2503,17 +2568,19 @@
       "description": "Finland's largest electricity distribution company, serving about 1.5 million people.",
       "fit": "Grid company in an ownership change; partial fit.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
         "revenue_m": null,
         "operating_profit_m": null,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 229,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "229 (end of 2025)",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://caruna.fi",
       "jobs": {
@@ -2523,10 +2590,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://caruna.fi/sites/default/files/docs/Caruna%20Annual%20Report%202025_0.pdf",
         "https://www.iberdrola.com/press-room/news/detail/iberdrola-acquires-finland-largest-electricity-distribution-company-valued-5-billion-euros"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2545,17 +2613,20 @@
       "description": "Infrastructure strategy of EQT; owns OX2 among many energy and digital infrastructure companies.",
       "fit": "Operating partner / value-creation roles in energy portfolio companies.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
-        "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
+        "revenue_m": 2632,
+        "operating_profit_m": 1642,
+        "operating_profit_label": "EBITDA",
+        "net_profit_m": 728,
+        "employees": 1863,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "aum_bn": 270,
+        "employees_label": "1,863 FTE (EQT AB group)",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://job-boards.eu.greenhouse.io/eqtpartners",
       "jobs": {
@@ -2569,10 +2640,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://eqtgroup.com/en/news/eqt-ab-publ-year-end-report-2025-2026-01-22",
         "https://www.ox2.com/newsroom/press-releases-news/2024/delisting-of-the-shares-in-ox2-from-nasdaq-stockholm"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null,
       "research_note": "Greenhouse EU board; shows all EQT jobs."
     },
@@ -2592,17 +2664,20 @@
       "description": "Finnish investment company whose Taaleri Energia unit manages renewable energy funds; describes itself as Finland's largest wind power producer.",
       "fit": "Investment and development roles in renewables; Helsinki-based.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
-        "operating_profit_m": null,
+        "revenue_m": 61.2,
+        "operating_profit_m": 25.9,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 128,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "aum_bn": 2.7,
+        "employees_label": "128 FTE",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://careers.taaleri.com/jobs",
       "jobs": {
@@ -2616,10 +2691,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.sttinfo.fi/announcement/71805273?lang=en",
         "https://taaleri.com/en/news/finlands-largest-wind-power-producer-taaleri-announces-its-sixth-renewable-energy-fund"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2638,7 +2714,7 @@
       "description": "Global private investment house; owns Verne and is investing heavily in Nordic data centres.",
       "fit": "Energy and infrastructure investment roles; Nordic data-centre build-out.",
       "financials": {
-        "year": null,
+        "year": 2026,
         "currency": "EUR",
         "revenue_m": null,
         "operating_profit_m": null,
@@ -2648,7 +2724,10 @@
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "aum_bn": 200,
+        "aum_currency": "USD",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.ardian.com",
       "jobs": {
@@ -2662,10 +2741,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.caproasia.com/?p=77676",
         "https://startupfortune.com/ardian-is-betting-over-a-billion-dollars-that-the-nordics-will-power-europes-ai-infrastructure-buildout/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2682,17 +2762,20 @@
       "description": "Allianz's equity investor in infrastructure and renewables: about 3.5 GW across 150+ wind and solar parks in Europe, incl. Finland, Sweden, Denmark, Germany.",
       "fit": "Investment and asset-management roles in renewables; German an advantage.",
       "financials": {
-        "year": null,
+        "year": 2024,
         "currency": "EUR",
         "revenue_m": null,
         "operating_profit_m": null,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 150,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "aum_bn": 60.8,
+        "employees_label": "~150 (Q2 2024)",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://careers.allianz.com",
       "jobs": {
@@ -2706,10 +2789,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://allianzcapitalpartners.com/en/about-us/acp-glance",
         "https://www.allianzcapitalpartners.com/our-business/renewables"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null,
       "research_note": "Allianz group career site; shows jobs of all Allianz companies."
     },
@@ -2727,17 +2811,20 @@
       "description": "Largest Nordic bank, with a Renewable Energy and Infrastructure Financing team in Stockholm.",
       "fit": "Energy finance and advisory roles; market and project-economics expertise.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
-        "revenue_m": null,
+        "revenue_m": 11743,
         "operating_profit_m": null,
         "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
+        "net_profit_m": 4840,
+        "employees": 28989,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "28,989 FTE",
+        "revenue_label": "total operating income",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://careers.nordea.com",
       "jobs": {
@@ -2751,10 +2838,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://www.inderes.fi/en/releases/nordea-fourth-quarter-and-full-year-results-2025",
         "https://careers.nordea.com/job/Stockholm-Director-in-Renewable-Energy-and-Infrastructure-Financing%2C-LC&I-111-46/1291724001"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2771,30 +2859,33 @@
       "description": "Swedish bank with energy-sector advisory and the SEB Nordic Energy renewables fund (≈SEK 8 bn).",
       "fit": "Energy finance, fund and advisory roles.",
       "financials": {
-        "year": null,
-        "currency": "EUR",
-        "revenue_m": null,
+        "year": 2025,
+        "currency": "SEK",
+        "revenue_m": 76939,
         "operating_profit_m": null,
         "operating_profit_label": "",
-        "net_profit_m": null,
-        "employees": null,
+        "net_profit_m": 31063,
+        "employees": 18600,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "around 18,600",
+        "revenue_label": "total operating income",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://sebgroup.com/career",
       "jobs": {
         "ats": "linkedin",
-        "detected": "2026-11-02, set manually – own career site, not supported",
-        "check": null
+        "detected": "2026-11-11, checked – own career site – not supported"
       },
       "linkedin_id": null,
       "sources": [
+        "https://sebgroup.com/press/press-releases/2026/sebs-annual-accounts-and-results-for-the-fourth-quarter-2025",
         "https://sebgroup.com/press/news/2026/seb-nordic-energy-doubles-capital--continues-investing"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2811,17 +2902,19 @@
       "description": "Norway's largest bank with an active renewable energy and energy-transition financing team.",
       "fit": "Energy finance roles.",
       "financials": {
-        "year": null,
+        "year": 2025,
         "currency": "EUR",
         "revenue_m": null,
         "operating_profit_m": null,
         "operating_profit_label": "",
         "net_profit_m": null,
-        "employees": null,
+        "employees": 11649,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "11,649 (31 Dec 2025)",
+        "verified": "2026-11-11"
       },
       "careers_url": "https://www.dnb.no",
       "jobs": {
@@ -2831,10 +2924,11 @@
       },
       "linkedin_id": null,
       "sources": [
+        "https://stockanalysis.com/quote/osl/DNB/employees/",
         "https://www.dnb.se/nyhetsrum/european-energy-has-secured-a-novel-five-year-eur-150-million-green-portfolio-financing-facility-with-dnb-seb-designed-to-accelerate-the-deployment-of-renewable-energy-projects"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-02",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -2863,18 +2957,17 @@
         "total_assets_m": null,
         "market_cap": null
       },
-      "careers_url": "https://careers.munichre.com/",
+      "careers_url": "https://karriere.meag.com",
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-10, no supported job system found",
-        "check": null
+        "ats": "linkedin",
+        "detected": "2026-11-11, checked – career site on rexx (karriere.meag.com) – not supported"
       },
       "linkedin_id": null,
       "sources": [
         "https://pulse2.com/meag-e20-billion-infrastructure-debt-expansion-planned-report/amp/"
       ],
       "added": "2026-11-02",
-      "updated": "2026-11-03",
+      "updated": "2026-11-11",
       "private": null
     },
     {
@@ -3098,16 +3191,17 @@
       ],
       "financials": {
         "currency": "EUR",
-        "year": null,
+        "year": 2025,
         "revenue_m": null,
-        "employees": 40,
+        "employees": 29,
         "operating_profit_m": null,
         "net_profit_m": null,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "operating_profit_label": "",
-        "market_cap": null
+        "market_cap": null,
+        "verified": "2026-11-11"
       },
       "jobs": {
         "ats": "teamtailor",
@@ -3118,7 +3212,9 @@
           "ok": true
         }
       },
-      "sources": [],
+      "sources": [
+        "https://www.finder.fi/Muu ammatillinen tieteellinen ja tekninen toiminta/Nordic Ren-Gas Oy/Espoo/yhteystiedot/3613658"
+      ],
       "private": null,
       "segment_detail": "eFuel",
       "country": "Finland",
@@ -3128,7 +3224,7 @@
       "fit": "high subsidy support, targeting German offtake market",
       "careers_url": "https://careers.ren-gas.com/",
       "linkedin_id": null,
-      "updated": "2026-11-03",
+      "updated": "2026-11-11",
       "added": "2026-11-03"
     },
     {
@@ -3142,16 +3238,18 @@
       ],
       "financials": {
         "currency": "EUR",
-        "year": null,
-        "revenue_m": null,
-        "employees": null,
+        "year": 2025,
+        "revenue_m": 24000,
+        "employees": 22000,
         "operating_profit_m": null,
         "net_profit_m": null,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "operating_profit_label": "",
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "22,000+",
+        "verified": "2026-11-11"
       },
       "jobs": {
         "ats": "successfactors",
@@ -3162,7 +3260,9 @@
           "ok": true
         }
       },
-      "sources": [],
+      "sources": [
+        "https://reports.omv.com/en/annual-report/2025/directors-report-management-review/company/about-omv.html"
+      ],
       "private": null,
       "segment_detail": "",
       "country": "Austria",
@@ -3172,7 +3272,7 @@
       "fit": "",
       "careers_url": "https://careers.omv.com/",
       "linkedin_id": null,
-      "updated": "2026-11-05",
+      "updated": "2026-11-11",
       "added": "2026-11-05"
     },
     {
@@ -3184,23 +3284,28 @@
       "segments_secondary": [],
       "financials": {
         "currency": "EUR",
-        "year": null,
-        "revenue_m": null,
-        "employees": null,
-        "operating_profit_m": null,
-        "net_profit_m": null,
+        "year": 2025,
+        "revenue_m": 8013.6,
+        "employees": 4424,
+        "operating_profit_m": 2737.5,
+        "net_profit_m": 1489.4,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
-        "operating_profit_label": "",
-        "market_cap": null
+        "operating_profit_label": "EBITDA",
+        "market_cap": null,
+        "net_profit_label": "group result",
+        "employees_label": "4,424 (end of 2024)",
+        "verified": "2026-11-11"
       },
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-05, no supported job system found",
-        "check": null
+        "ats": "linkedin",
+        "detected": "2026-11-11, checked – jobs on onlyfy (verbund.onlyfy.jobs) – not supported"
       },
-      "sources": [],
+      "sources": [
+        "https://www.verbund.com/en/group/integrated-annual-report-2025/key-figures",
+        "https://stockanalysis.com/quote/pra/VER/employees"
+      ],
       "private": null,
       "segment_detail": "Power generation, Renewables",
       "country": "Austria",
@@ -3210,7 +3315,7 @@
       "fit": "",
       "careers_url": "https://jobs.verbund.com/de/jobportal",
       "linkedin_id": null,
-      "updated": "2026-11-05",
+      "updated": "2026-11-11",
       "added": "2026-11-05"
     },
     {
@@ -3264,27 +3369,27 @@
       ],
       "financials": {
         "currency": "EUR",
-        "year": null,
+        "year": 2025,
         "revenue_m": null,
-        "employees": null,
+        "employees": 98,
         "operating_profit_m": null,
         "net_profit_m": null,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "operating_profit_label": "",
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "98 (end of 2025)",
+        "verified": "2026-11-11"
       },
       "jobs": {
-        "ats": "ashby",
-        "id": "skynrg",
-        "detected": "2026-11-05, name guess – please verify",
-        "check": {
-          "date": "2026-11-09",
-          "ok": true
-        }
+        "ats": "teamtailor",
+        "url": "https://careers.skynrg.com",
+        "detected": "2026-11-11, verified – job ads on careers.skynrg.com (Teamtailor)"
       },
-      "sources": [],
+      "sources": [
+        "https://skynrg.com/knowledge-center/impact-report-2025/"
+      ],
       "private": null,
       "segment_detail": "",
       "country": "",
@@ -3292,9 +3397,9 @@
       "ownership": "Private",
       "description": "",
       "fit": "",
-      "careers_url": "",
+      "careers_url": "https://careers.skynrg.com",
       "linkedin_id": null,
-      "updated": "2026-11-05",
+      "updated": "2026-11-11",
       "added": "2026-11-05"
     },
     {
@@ -3308,23 +3413,27 @@
       ],
       "financials": {
         "currency": "EUR",
-        "year": null,
-        "revenue_m": null,
-        "employees": null,
+        "year": 2025,
+        "revenue_m": 39100,
+        "employees": 103000,
         "operating_profit_m": null,
-        "net_profit_m": null,
+        "net_profit_m": 1685,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "operating_profit_label": "",
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "around 103,000",
+        "verified": "2026-11-11"
       },
       "jobs": {
-        "ats": null,
-        "detect_failed": "2026-11-06, no supported job system found",
-        "check": null
+        "ats": "avature",
+        "url": "https://jobs.siemens-energy.com/en_US/jobs",
+        "detected": "2026-11-11, set manually – Avature career site"
       },
-      "sources": [],
+      "sources": [
+        "https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q4-fy-2025.html"
+      ],
       "private": null,
       "segment_detail": "",
       "country": "Germany",
@@ -3334,7 +3443,7 @@
       "fit": "",
       "careers_url": "https://jobs.siemens-energy.com/",
       "linkedin_id": null,
-      "updated": "2026-11-06",
+      "updated": "2026-11-11",
       "added": "2026-11-06"
     },
     {
@@ -3348,30 +3457,33 @@
       ],
       "financials": {
         "currency": "EUR",
-        "year": null,
+        "year": 2025,
         "revenue_m": null,
-        "employees": null,
+        "employees": 1830,
         "operating_profit_m": null,
         "net_profit_m": null,
         "net_debt_m": null,
         "equity_ratio_pct": null,
         "total_assets_m": null,
         "operating_profit_label": "",
-        "market_cap": null
+        "market_cap": null,
+        "employees_label": "around 1,830 (end of 2025)",
+        "verified": "2026-11-11"
       },
       "jobs": {
         "ats": "workday",
-        "id": "detect automatically",
-        "detected": "2026-11-11, set manually",
-        "check": null
+        "url": "https://mabanaft.wd3.myworkdayjobs.com/en-US/Mabanaft",
+        "detected": "2026-11-11, set manually – job board URL added"
       },
-      "sources": [],
+      "sources": [
+        "https://www.mbenergy.com/global/en/about-us/mabanaft-group"
+      ],
       "private": null,
       "segment_detail": "Fuels",
       "country": "Germany",
       "hq": "Hamburg",
       "ownership": "Private",
-      "description": "",
+      "description": "Subsidiary of Marquard & Bahls; sales volume approx. 13 million t (2024).",
       "fit": "",
       "careers_url": "https://mabanaft.wd3.myworkdayjobs.com/en-US/Mabanaft/jobs",
       "linkedin_id": null,
