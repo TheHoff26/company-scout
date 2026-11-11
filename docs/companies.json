@@ -953,7 +953,7 @@
       "careers_url": "https://careers.vattenfall.com",
       "jobs": {
         "ats": "linkedin",
-        "detected": "2026-11-11, checked – own career site (Phenom) – not supported"
+        "detected": "2026-11-11, checked – own career site (careers.vattenfall.com, Attrax) – not supported yet"
       },
       "linkedin_id": null,
       "sources": [
@@ -1220,11 +1220,11 @@
         "employees_label": "29,728 FTE (31,541 headcount)",
         "verified": "2026-11-11"
       },
-      "careers_url": "https://careers.enbw.com/en_US/careers",
+      "careers_url": "https://careers.enbw.com/global/en",
       "jobs": {
-        "ats": "avature",
-        "url": "https://careers.enbw.com/en_US/careers",
-        "detected": "2026-11-11, set manually – Avature career site"
+        "ats": "phenom",
+        "url": "https://careers.enbw.com/global/en",
+        "detected": "2026-11-11, checked – career site moved to Phenom (careers.enbw.com/global/en)"
       },
       "linkedin_id": null,
       "sources": [
@@ -2779,13 +2779,9 @@
       },
       "careers_url": "https://careers.allianz.com",
       "jobs": {
-        "ats": "successfactors",
-        "url": "https://careers.allianz.com",
-        "detected": "2026-11-02, set manually (research)",
-        "check": {
-          "date": "2026-11-09",
-          "ok": false
-        }
+        "ats": "phenom",
+        "url": "https://careers.allianz.com/global/en/search-results?keywords=Allianz%20Capital%20Partners",
+        "detected": "2026-11-11, checked – careers.allianz.com is a Phenom site (the SAP feed no longer works); search limited to 'Allianz Capital Partners'"
       },
       "linkedin_id": null,
       "sources": [
@@ -3383,9 +3379,9 @@
         "verified": "2026-11-11"
       },
       "jobs": {
-        "ats": "teamtailor",
-        "url": "https://careers.skynrg.com",
-        "detected": "2026-11-11, verified – job ads on careers.skynrg.com (Teamtailor)"
+        "ats": "ashby",
+        "id": "skynrg",
+        "detected": "2026-11-11, verified – skynrg.com links to jobs.ashbyhq.com/skynrg (careers.skynrg.com no longer resolves)"
       },
       "sources": [
         "https://skynrg.com/knowledge-center/impact-report-2025/"
@@ -3397,7 +3393,7 @@
       "ownership": "Private",
       "description": "",
       "fit": "",
-      "careers_url": "https://careers.skynrg.com",
+      "careers_url": "https://skynrg.com/working-at-skynrg",
       "linkedin_id": null,
       "updated": "2026-11-11",
       "added": "2026-11-05"
@@ -3428,8 +3424,8 @@
       },
       "jobs": {
         "ats": "avature",
-        "url": "https://jobs.siemens-energy.com/en_US/jobs",
-        "detected": "2026-11-11, set manually – Avature career site"
+        "url": "https://jobs.siemens-energy.com/en_US/jobs/Jobs",
+        "detected": "2026-11-11, checked – Avature list 'All open positions' (FolderDetail pages)"
       },
       "sources": [
         "https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q4-fy-2025.html"
@@ -3472,9 +3468,8 @@
       },
       "jobs": {
         "ats": "workday",
-        "id": "filled in automatically",
-        "detected": "2026-11-11, set manually",
-        "check": null
+        "url": "https://mabanaft.wd3.myworkdayjobs.com/en-US/Mabanaft",
+        "detected": "2026-11-11, set manually"
       },
       "sources": [
         "https://www.mbenergy.com/global/en/about-us/mabanaft-group"

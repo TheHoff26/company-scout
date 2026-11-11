@@ -221,7 +221,7 @@ fieldset{border:none;padding:0;margin:0}
           <option value="successfactors">SAP SuccessFactors</option><option value="workday">Workday</option>
           <option value="greenhouse">Greenhouse</option><option value="lever">Lever</option><option value="ashby">Ashby</option>
           <option value="smartrecruiters">SmartRecruiters</option><option value="personio">Personio</option><option value="recruitee">Recruitee</option><option value="teamtailor">Teamtailor</option>
-          <option value="avature">Avature</option><option value="easycruit">EasyCruit</option>
+          <option value="avature">Avature</option><option value="easycruit">EasyCruit</option><option value="phenom">Phenom</option>
           <option value="linkedin">LinkedIn link only</option>
         </select></label>
         <label>Job system address or account<input name="ats_target" placeholder="filled in automatically"></label>
@@ -308,7 +308,7 @@ const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls)
 const store = { get(k){ try { return localStorage.getItem(k) || ""; } catch(e) { return ""; } },
                 set(k,v){ try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch(e) {} } };
 const ATS = {successfactors:"SAP SuccessFactors", workday:"Workday", greenhouse:"Greenhouse", lever:"Lever", ashby:"Ashby",
-  smartrecruiters:"SmartRecruiters", personio:"Personio", recruitee:"Recruitee", teamtailor:"Teamtailor", avature:"Avature", easycruit:"EasyCruit", linkedin:"LinkedIn link only"};
+  smartrecruiters:"SmartRecruiters", personio:"Personio", recruitee:"Recruitee", teamtailor:"Teamtailor", avature:"Avature", easycruit:"EasyCruit", phenom:"Phenom", linkedin:"LinkedIn link only"};
 const FILE = "docs/companies.json";
 
 let data = null, sha = null, key = null, privateCache = {}, editing = null;
@@ -543,7 +543,8 @@ async function collect(){
   f.market_cap = mv == null ? null : {value_bn: mv, currency: F("m_currency").value.trim() || "EUR", as_of: F("m_as_of").value.trim(), source: (c.financials && c.financials.market_cap && c.financials.market_cap.source) || ""};
   out.financials = f;
   // job source: keep detection results unless the user changed the system or address
-  const ats = F("ats").value, target = F("ats_target").value.trim(), old = c.jobs || {};
+  const ats = F("ats").value, old = c.jobs || {};
+  const target = /^filled in automatically$/i.test(F("ats_target").value.trim()) ? "" : F("ats_target").value.trim();
   const oldTarget = old.url || old.id || "";
   if (ats !== (old.ats || "") || target !== oldTarget || (!ats && url !== (c.careers_url || ""))){
     if (!ats) out.jobs = {ats: null};
