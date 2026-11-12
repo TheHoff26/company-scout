@@ -3338,7 +3338,7 @@
       },
       "jobs": {
         "ats": null,
-        "detect_failed": "2026-11-05, no supported job system found – add the careers page URL",
+        "detect_failed": "2026-11-12, no supported job system found – add the careers page URL",
         "check": null
       },
       "sources": [],
